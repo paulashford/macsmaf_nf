@@ -1,0 +1,32 @@
+module	monet_type	experiment_info	function_summary	term_id_GO_BP	term_id_KEGG	term_id_REAC	goslim_pir	genes
+4	R1	e019_R1	positive regulation of nucleotide biosynthetic process	GO:0030810	NA	NA	GO:0050789	-
+15	R1	e019_R1	regulation of actin binding	GO:1904616	NA	NA	GO:0065009	-
+19	R1	e019_R1	positive regulation of mast cell chemotaxis	GO:0060754	NA	NA	GO:0050789	-
+20	R1	e019_R1	modulation of excitatory postsynaptic potential	GO:0098815	NA	NA	GO:0050789;GO:0065008	-
+31	R1	e019_R1	Lysosome	NA	KEGG:04142	NA	NA	-
+44	R1	e019_R1	negative regulation of cyclin-dependent protein serine/threonine kinase activity / Cell cycle / Cyclin D associated events in G1	GO:0045736	KEGG:04110	REAC:R-HSA-69231	GO:0065009;GO:0050789	-
+47	R1	e019_R1	regulation of potassium ion transmembrane transporter activity	GO:1901016	NA	NA	GO:0065009;GO:0050789	-
+57	R1	e019_R1	Cushing syndrome / RAF activation	NA	KEGG:04934	REAC:R-HSA-5673000	NA	-
+63	R1	e019_R1	negative regulation of cell differentiation	GO:0045596	NA	NA	GO:0050789	-
+64	R1	e019_R1	ethanol oxidation / Tyrosine metabolism / Ethanol oxidation	GO:0006069	KEGG:00350	REAC:R-HSA-71384	GO:0006066;GO:0006091	-
+75	R1	e019_R1	desensitization of G protein-coupled receptor signaling pathway	GO:0002029	NA	NA	GO:0050789	-
+77	R1	e019_R1	antigen processing and presentation of lipid antigen via MHC class Ib	GO:0048003	NA	NA	GO:0002376	-
+90	R1	e019_R1	negative regulation of oxidative stress-induced cell death	GO:1903202	NA	NA	GO:0050789	-
+98	R1	e019_R1	fasciculation of motor neuron axon / EPHA-mediated growth cone collapse	GO:0097156	NA	REAC:R-HSA-3928663	GO:0008037;GO:0016043	-
+100	R1	e019_R1	Evasion of Oxidative Stress Induced Senescence Due to p16INK4A Defects	NA	NA	REAC:R-HSA-9632693	NA	-
+101	R1	e019_R1	Nucleotide excision repair	NA	KEGG:03420	NA	NA	-
+106	R1	e019_R1	Collecting duct acid secretion / Insulin receptor recycling	NA	KEGG:04966	REAC:R-HSA-77387	NA	-
+111	R1	e019_R1	Digestion of dietary carbohydrate	NA	NA	REAC:R-HSA-189085	NA	-
+122	R1	e019_R1	Postsynaptic nicotinic acetylcholine receptors	NA	NA	REAC:R-HSA-622327	GO:0050896	-
+126	R1	e019_R1	regulation of lipid localization	GO:1905952	NA	NA	GO:0050789	-
+152	R1	e019_R1	Taurine and hypotaurine metabolism	NA	KEGG:00430	NA	GO:0008152	-
+154	R1	e019_R1	CYP2E1 reactions	NA	NA	REAC:R-HSA-211999	NA	-
+174	R1	e019_R1	Glycine, serine and threonine metabolism	NA	KEGG:00260	NA	NA	-
+184	R1	e019_R1	glutamate receptor signaling pathway	GO:0007215	NA	NA	GO:0050789	-
+190	R1	e019_R1	one-carbon metabolic process / Nitrogen metabolism / FGFR1b ligand binding and activation	GO:0006730	KEGG:00910	REAC:R-HSA-190370	NA	-
+199	R1	e019_R1	MET activates PTK2 signaling	NA	NA	REAC:R-HSA-8874081	NA	-
+208	R1	e019_R1	dopamine receptor signaling pathway / Chagas disease / Adenylate cyclase inhibitory pathway	GO:0007212	KEGG:05142	REAC:R-HSA-170670	GO:0050896;GO:0050789	-
+227	R1	e019_R1	response to peptide hormone	GO:0043434	NA	NA	GO:0050896	-
+233	R1	e019_R1	circadian regulation of translation	GO:0097167	NA	NA	GO:0048511;GO:0050789	-
+248	R1	e019_R1	Bladder cancer	NA	KEGG:05219	NA	NA	-
+250	R1	e019_R1	G beta:gamma signalling through CDC42	NA	NA	REAC:R-HSA-8964616	NA	-
