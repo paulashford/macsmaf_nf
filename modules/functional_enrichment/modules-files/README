@@ -1,0 +1,5 @@
+cp /Users/ash/Dropbox/bioinf/MACSMAF/experiments/ey002/MACSMAF-Seed-Modules-Data/modules*.dat .
+ie this is just a copy of the full modules on original nets from ey002
+*singletons removed - kept names same to avoid file explosions!*
+04 05 2023
+

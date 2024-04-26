@@ -1,0 +1,363 @@
+module	monet_type	experiment_info	function_summary	term_id_GO_BP	term_id_KEGG	term_id_REAC	goslim_pir	genes
+1	R1	e019_R1	retrograde transport, endosome to Golgi / Endocytosis	GO:0042147	KEGG:04144	NA	GO:0051641;GO:0016192	-
+2	R1	e019_R1	mRNA export from nucleus / HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand	GO:0006406	NA	REAC:R-HSA-3371497	GO:0051641;GO:0009057;GO:0016070;GO:0015931;GO:0050789	-
+3	R1	e019_R1	regulation of endothelial cell proliferation / Ras signaling pathway / VEGF ligand-receptor interactions	GO:0001936	KEGG:04014	REAC:R-HSA-194313	GO:0032502;GO:0050789;GO:0040011;GO:0008283	-
+4	R1	e019_R1	regulation of intracellular pH	GO:0051453	NA	NA	GO:0050789;GO:0050896;GO:0065009	-
+5	R1	e019_R1	negative regulation of amyloid fibril formation / Prefoldin mediated transfer of substrate  to CCT/TriC	GO:1905907	NA	REAC:R-HSA-389957	GO:0050789;GO:0019538;GO:0016043	-
+6	R1	e019_R1	sensory perception of sound / Sensory processing of sound by outer hair cells of the cochlea	GO:0007605	NA	REAC:R-HSA-9662361	GO:0032502;GO:0050877	-
+7	R1	e019_R1	vesicle tethering involved in exocytosis / VxPx cargo-targeting to cilium	GO:0090522	NA	REAC:R-HSA-5620916	GO:0046903;GO:0061024;GO:0051640;GO:0016192;GO:0022406	-
+8	R1	e019_R1	actin filament-based process / Yersinia infection / RHO GTPases Activate WASPs and WAVEs	GO:0030029	KEGG:05135	REAC:R-HSA-5663213	GO:0006996	-
+9	R1	e019_R1	regulation of monoatomic ion transmembrane transporter activity / Arrhythmogenic right ventricular cardiomyopathy / Presynaptic depolarization and calcium channel opening	GO:0032412	KEGG:05412	REAC:R-HSA-112308	GO:0006811;GO:0015031;GO:0016192;GO:0007154;GO:0050789;GO:0065009	-
+10	R1	e019_R1	Wnt signaling pathway, planar cell polarity pathway / Basal cell carcinoma / PCP/CE pathway	GO:0060071	KEGG:05217	REAC:R-HSA-4086400	GO:0032502;GO:0050789;GO:0007154	-
+11	R1	e019_R1	positive regulation of telomere maintenance in response to DNA damage / DNA Damage Recognition in GG-NER	GO:1904507	NA	REAC:R-HSA-5696394	GO:0050789;GO:0051276;GO:0050896;GO:0006259	-
+12	R1	e019_R1	immune response-regulating cell surface receptor signaling pathway / B cell receptor signaling pathway / Antigen activates B Cell Receptor (BCR) leading to generation of second messengers	GO:0002768	KEGG:04662	REAC:R-HSA-983695	GO:0002376;GO:0050789	-
+13	R1	e019_R1	regulation of cell fate specification / RNA Polymerase I Transcription Initiation	GO:0042659	NA	REAC:R-HSA-73762	GO:0032502;GO:0050789;GO:0016043	-
+14	R1	e019_R1	vesicle tethering / RAB GEFs exchange GTP for GDP on RABs	GO:0099022	NA	REAC:R-HSA-8876198	GO:0016050;GO:0061024	-
+15	R1	e019_R1	cell adhesion mediated by integrin / ECM-receptor interaction / Integrin cell surface interactions	GO:0033627	KEGG:04512	REAC:R-HSA-216083	GO:0050789;GO:0007155	-
+16	R1	e019_R1	circadian regulation of gene expression / Circadian rhythm / Circadian Clock	GO:0032922	KEGG:04710	REAC:R-HSA-400253	GO:0050789;GO:0050896;GO:0048511	-
+17	R1	e019_R1	response to heat / Cellular response to heat stress	GO:0009408	NA	REAC:R-HSA-3371556	GO:0050896;GO:0006457	-
+18	R1	e019_R1	peptide antigen assembly with MHC class II protein complex / Graft-versus-host disease / MHC class II antigen presentation	GO:0002503	KEGG:05332	REAC:R-HSA-2132295	GO:0002376;GO:0050789;GO:0065003;GO:0001775	-
+19	R1	e019_R1	EGFR tyrosine kinase inhibitor resistance / MET activates RAS signaling	NA	KEGG:01521	REAC:R-HSA-8851805	NA	-
+20	R1	e019_R1	T cell receptor signaling pathway / Primary immunodeficiency / Translocation of ZAP-70 to Immunological synapse	GO:0050852	KEGG:05340	REAC:R-HSA-202430	GO:0002376;GO:0050789	-
+21	R1	e019_R1	positive regulation of establishment of protein localization to telomere / Folding of actin by CCT/TriC	GO:1904851	NA	REAC:R-HSA-390450	GO:0050789;GO:0051641;GO:0051234;GO:0006457	-
+22	R1	e019_R1	double-strand break repair via nonhomologous end joining / Non-homologous end-joining / Nonhomologous End-Joining (NHEJ)	GO:0006303	KEGG:03450	REAC:R-HSA-5693571	GO:0002376;GO:0006266;GO:0006281	-
+23	R1	e019_R1	heme a metabolic process	GO:0046160	NA	NA	GO:0065003	-
+24	R1	e019_R1	cholecystokinin signaling pathway / Pancreatic secretion / GPCR ligand binding	GO:0038188	KEGG:04972	REAC:R-HSA-500792	GO:0050789	-
+25	R1	e019_R1	neutral amino acid transport / Basigin interactions	GO:0015804	NA	REAC:R-HSA-210991	GO:0006865	-
+26	R1	e019_R1	chloride transmembrane transport / Nicotine addiction / GABA receptor activation	GO:1902476	KEGG:05033	REAC:R-HSA-977443	GO:0006811;GO:0007033;GO:0065008;GO:0007154;GO:0022607	-
+27	R1	e019_R1	GPI anchor biosynthetic process / Glycosylphosphatidylinositol (GPI)-anchor biosynthesis	GO:0006506	KEGG:00563	NA	GO:0036211;GO:0044255;GO:0009059;GO:0006793	-
+28	R1	e019_R1	Notch receptor processing / Noncanonical activation of NOTCH3	GO:0007220	NA	REAC:R-HSA-9017802	GO:0006518;GO:0006508	-
+29	R1	e019_R1	organelle disassembly / Mitophagy - animal	GO:1903008	KEGG:04137	NA	GO:0022411;GO:0007005;GO:0006914	-
+30	R1	e019_R1	neurotrophin signaling pathway / Neurotrophin signaling pathway / p75NTR regulates axonogenesis	GO:0038179	KEGG:04722	REAC:R-HSA-193697	GO:0050789;GO:0050896	-
+31	R1	e019_R1	Proteasome / Cross-presentation of soluble exogenous antigens (endosomes)	NA	KEGG:03050	REAC:R-HSA-1236978	GO:0006508;GO:0009057	-
+32	R1	e019_R1	epidermal growth factor receptor signaling pathway / ErbB signaling pathway / Inhibition of Signaling by Overexpressed EGFR	GO:0007173	KEGG:04012	REAC:R-HSA-5638303	GO:0050789;GO:0065009	-
+33	R1	e019_R1	IL-17 signaling pathway / Interleukin-17 signaling	NA	KEGG:04657	REAC:R-HSA-448424	GO:0050789;GO:0050896	-
+34	R1	e019_R1	Mitochondrial translation initiation	NA	NA	REAC:R-HSA-5368286	GO:0006412	-
+35	R1	e019_R1	vesicle fusion / SNARE interactions in vesicular transport	GO:0006906	KEGG:04130	NA	GO:0006836;GO:0046903;GO:0016050;GO:0048284;GO:0061024;GO:0065008;GO:0051640;GO:0016192;GO:0022406	-
+36	R1	e019_R1	Peptide ligand-binding receptors	NA	NA	REAC:R-HSA-375276	GO:0008015	-
+37	R1	e019_R1	DNA replication / HDR through Single Strand Annealing (SSA)	GO:0006260	NA	REAC:R-HSA-5685938	GO:0050789;GO:0006260;GO:0006281;GO:0065009	-
+38	R1	e019_R1	action potential / Interaction between L1 and Ankyrins	GO:0001508	NA	REAC:R-HSA-445095	GO:0006811;GO:0065008;GO:0006936;GO:0007154;GO:0050789;GO:0008015	-
+40	R1	e019_R1	vein smooth muscle contraction / Renin secretion / Fatty Acids bound to GPR40 (FFAR1) regulate insulin secretion	GO:0014826	KEGG:04924	REAC:R-HSA-434316	GO:0065008;GO:0050789;GO:0006936;GO:0065009	-
+41	R1	e019_R1	mRNA transcription by RNA polymerase II / PPAR signaling pathway / Nuclear Receptor transcription pathway	GO:0042789	KEGG:03320	REAC:R-HSA-383280	GO:0006351;GO:0007154;GO:0048511;GO:0050789;GO:0050896	-
+42	R1	e019_R1	regulation of transcription from RNA polymerase II promoter in response to stress / Aryl hydrocarbon receptor signalling	GO:0043618	NA	REAC:R-HSA-8937144	GO:0050789;GO:0050896	-
+43	R1	e019_R1	semaphorin-plexin signaling pathway / Prolactin receptor signaling	GO:0071526	NA	REAC:R-HSA-1170546	GO:0050789	-
+44	R1	e019_R1	positive regulation of chromosome condensation / Insulin signaling pathway / CREB1 phosphorylation through the activation of Adenylate Cyclase	GO:1905821	KEGG:04910	REAC:R-HSA-442720	GO:0006811;GO:0065008;GO:0051276;GO:0050789;GO:0032501;GO:0065009	-
+45	R1	e019_R1	protein deubiquitination / Ubiquitin mediated proteolysis / Synthesis of active ubiquitin: roles of E1 and E2 enzymes	GO:0016579	KEGG:04120	REAC:R-HSA-8866652	GO:0036211;GO:0006508;GO:0009057	-
+46	R1	e019_R1	RNA splicing, via transesterification reactions / mRNA Splicing - Major Pathway	GO:0000375	NA	REAC:R-HSA-72163	GO:0000375	-
+47	R1	e019_R1	positive regulation of MHC class II biosynthetic process / Formation of Senescence-Associated Heterochromatin Foci (SAHF)	GO:0045348	NA	REAC:R-HSA-2559584	GO:0032502;GO:0050789;GO:0009059	-
+48	R1	e019_R1	Long-term potentiation / CaMK IV-mediated phosphorylation of CREB	NA	KEGG:04720	REAC:R-HSA-111932	GO:0036211;GO:0050789;GO:0006793	-
+49	R1	e019_R1	negative regulation of adiponectin secretion / Endocytosis / TBC/RABGAPs	GO:0070164	KEGG:04144	REAC:R-HSA-8854214	GO:0065008;GO:0051641;GO:0050789;GO:0016192	-
+50	R1	e019_R1	retrograde protein transport, ER to cytosol / Protein processing in endoplasmic reticulum / N-glycan trimming in the ER and Calnexin/Calreticulin cycle	GO:0030970	KEGG:04141	REAC:R-HSA-532668	GO:0050896;GO:0006508;GO:0015031;GO:0009057	-
+51	R1	e019_R1	superoxide anion generation / RHO GTPases Activate NADPH Oxidases	GO:0042554	NA	REAC:R-HSA-5668599	GO:0008152	-
+52	R1	e019_R1	cellular response to estradiol stimulus / AMPK signaling pathway / Energy dependent regulation of mTOR by LKB1-AMPK	GO:0071392	KEGG:04152	REAC:R-HSA-380972	GO:0050789;GO:0050896	-
+53	R1	e019_R1	heterotypic cell-cell adhesion / Cell adhesion molecules / Integrin cell surface interactions	GO:0034113	KEGG:04514	REAC:R-HSA-216083	GO:0050789;GO:0007155	-
+54	R1	e019_R1	regulation of nucleotide-excision repair / RUNX1 interacts with co-factors whose precise effect on RUNX1 targets is not known	GO:2000819	NA	REAC:R-HSA-8939243	GO:0032502;GO:0050789;GO:0006281;GO:0016043	-
+55	R1	e019_R1	leukocyte tethering or rolling / Cell adhesion molecules	GO:0050901	KEGG:04514	NA	GO:0002376;GO:0007155	-
+56	R1	e019_R1	tRNA 5'-end processing / tRNA processing	GO:0099116	NA	REAC:R-HSA-72306	GO:0050789;GO:0006396;GO:0009057	-
+57	R1	e019_R1	regulation of I-kappaB kinase/NF-kappaB signaling / TNF signaling pathway / TNF signaling	GO:0043122	KEGG:04668	REAC:R-HSA-75893	GO:0036211;GO:0006508;GO:0002376;GO:0050789;GO:0050896	-
+58	R1	e019_R1	retrograde transport, vesicle recycling within Golgi / Intra-Golgi traffic	GO:0000301	NA	REAC:R-HSA-6811438	GO:0016192	-
+59	R1	e019_R1	protein dephosphorylation / mRNA surveillance pathway / APC truncation mutants have impaired AXIN binding	GO:0006470	KEGG:03015	REAC:R-HSA-5467337	GO:0036211;GO:0050789;GO:0006793	-
+60	R1	e019_R1	RIP-mediated NFkB activation via ZBP1	NA	NA	REAC:R-HSA-1810476	GO:0050789	-
+61	R1	e019_R1	BMP signaling pathway / TGF-beta signaling pathway / Signaling by BMP	GO:0030509	KEGG:04350	REAC:R-HSA-201451	GO:0036211;GO:0006793;GO:0032502;GO:0050789;GO:0032501;GO:0050896	-
+62	R1	e019_R1	ephrin receptor signaling pathway / Axon guidance / EPHA-mediated growth cone collapse	GO:0048013	KEGG:04360	REAC:R-HSA-3928663	GO:0032989;GO:0050789	-
+63	R1	e019_R1	anaphase-promoting complex-dependent catabolic process / Cell cycle / Conversion from APC/C:Cdc20 to APC/C:Cdh1 in late anaphase	GO:0031145	KEGG:04110	REAC:R-HSA-176407	GO:0000280;GO:0007049;GO:0009057;GO:0036211;GO:0051276;GO:0006508;GO:0050789;GO:0007059	-
+65	R1	e019_R1	intermediate filament organization	GO:0045109	NA	NA	GO:0006996	-
+66	R1	e019_R1	fibroblast growth factor receptor signaling pathway / Melanoma / FGFR4 ligand binding and activation	GO:0008543	KEGG:05218	REAC:R-HSA-190322	GO:0032502;GO:0050789;GO:0050896	-
+67	R1	e019_R1	protein targeting to mitochondrion / Mitochondrial protein import	GO:0006626	NA	REAC:R-HSA-1268020	GO:0007005;GO:0015031	-
+68	R1	e019_R1	TORC1 signaling / mTOR signaling pathway / Amino acids regulate mTORC1	GO:0038202	KEGG:04150	REAC:R-HSA-9639288	GO:0050789;GO:0050896;GO:0007154	-
+69	R1	e019_R1	mitotic spindle midzone assembly	GO:0051256	NA	NA	GO:0050789;GO:0022607	-
+70	R1	e019_R1	focal adhesion assembly / Signaling by high-kinase activity BRAF mutants	GO:0048041	NA	REAC:R-HSA-6802948	GO:0022607;GO:0007155	-
+71	R1	e019_R1	neuron projection guidance / Axon guidance / Netrin mediated repulsion signals	GO:0097485	KEGG:04360	REAC:R-HSA-418886	GO:0032989	-
+72	R1	e019_R1	tRNA aminoacylation for protein translation / Aminoacyl-tRNA biosynthesis / Cytosolic tRNA aminoacylation	GO:0006418	KEGG:00970	REAC:R-HSA-379716	GO:0016070;GO:0006412;GO:0006520;GO:0015031	-
+73	R1	e019_R1	ERBB signaling pathway / ErbB signaling pathway / ERBB2 Activates PTK6 Signaling	GO:0038127	KEGG:04012	REAC:R-HSA-8847993	GO:0036211;GO:0050789;GO:0006793	-
+74	R1	e019_R1	histone H2A-K119 monoubiquitination / RUNX1 interacts with co-factors whose precise effect on RUNX1 targets is not known	GO:0036353	NA	REAC:R-HSA-8939243	GO:0036211;GO:0050789	-
+75	R1	e019_R1	complement activation / Neomycin, kanamycin and gentamicin biosynthesis / Terminal pathway of complement	GO:0006956	KEGG:00524	REAC:R-HSA-166665	GO:0006793;GO:0002376;GO:0007005;GO:0050789;GO:0050896	-
+76	R1	e019_R1	phosphatidylinositol dephosphorylation / PI Metabolism	GO:0046856	NA	REAC:R-HSA-1483255	GO:0044255;GO:0006793	-
+77	R1	e019_R1	coagulation / Complement and coagulation cascades / Common Pathway of Fibrin Clot Formation	GO:0050817	KEGG:04610	REAC:R-HSA-140875	GO:0050789;GO:0050896;GO:0050878;GO:0050817	-
+78	R1	e019_R1	Basal transcription factors / RNA Polymerase II Promoter Escape	NA	KEGG:03022	REAC:R-HSA-73776	GO:0006354	-
+79	R1	e019_R1	ATP synthesis coupled electron transport / Oxidative phosphorylation / Respiratory electron transport	GO:0042773	KEGG:00190	REAC:R-HSA-611105	GO:0065003;GO:0022900;GO:0006119	-
+80	R1	e019_R1	chloride transport	GO:0006821	NA	NA	GO:0006811	-
+81	R1	e019_R1	intraciliary anterograde transport / Intraflagellar transport	GO:0035720	NA	REAC:R-HSA-5620924	GO:0051641;GO:0006810	-
+82	R1	e019_R1	RNA polymerase / RNA Polymerase III Chain Elongation	NA	KEGG:03020	REAC:R-HSA-73780	GO:0006351;GO:0050789;GO:0032502;GO:0006354	-
+83	R1	e019_R1	hydrogen peroxide catabolic process / African trypanosomiasis / Scavenging of heme from plasma	GO:0042744	KEGG:05143	REAC:R-HSA-2168880	GO:0065003;GO:0008152;GO:0006869;GO:0015669;GO:0050789;GO:0032501	-
+84	R1	e019_R1	positive regulation of Arp2/3 complex-mediated actin nucleation / Pathogenic Escherichia coli infection / RHO GTPases Activate WASPs and WAVEs	GO:2000601	KEGG:05130	REAC:R-HSA-5663213	GO:0050789;GO:0016043	-
+85	R1	e019_R1	organelle membrane fusion / SNARE interactions in vesicular transport / Intra-Golgi and retrograde Golgi-to-ER traffic	GO:0090174	KEGG:04130	REAC:R-HSA-6811442	GO:0016192;GO:0061024;GO:0048284;GO:0016050	-
+86	R1	e019_R1	ECM-receptor interaction / Type I hemidesmosome assembly	NA	KEGG:04512	REAC:R-HSA-446107	GO:0050789;GO:0022607	-
+87	R1	e019_R1	transforming growth factor beta receptor signaling pathway / TGF-beta signaling pathway / TGF-beta receptor signaling activates SMADs	GO:0007179	KEGG:04350	REAC:R-HSA-2173789	GO:0051641;GO:0016050;GO:0048284;GO:0065003;GO:0061024;GO:0036211;GO:0006793;GO:0016192;GO:0050789;GO:0050896	-
+88	R1	e019_R1	regulation of metanephric mesenchymal cell migration by platelet-derived growth factor receptor-beta signaling pathway / Melanoma / PIP3 activates AKT signaling	GO:1900238	KEGG:05218	REAC:R-HSA-1257604	GO:0050789	-
+89	R1	e019_R1	regulation of epithelial to mesenchymal transition	GO:0010717	NA	NA	GO:0032502;GO:0050789;GO:0050896	-
+90	R1	e019_R1	Regulation of TP53 Activity through Association with Co-factors	NA	NA	REAC:R-HSA-6804759	GO:0050789	-
+91	R1	e019_R1	rRNA processing / rRNA modification in the nucleus and cytosol	GO:0006364	NA	REAC:R-HSA-6790901	GO:0042254;GO:0006396	-
+92	R1	e019_R1	regulation of insulin-like growth factor receptor signaling pathway / Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)	GO:0043567	NA	REAC:R-HSA-381426	GO:0050789;GO:0050896	-
+93	R1	e019_R1	mRNA methylation	GO:0080009	NA	NA	GO:0006396;GO:0043412	-
+94	R1	e019_R1	spliceosomal snRNP assembly / snRNP Assembly	GO:0000387	NA	REAC:R-HSA-191859	GO:0000375;GO:0065003	-
+95	R1	e019_R1	tyrosine phosphorylation of STAT protein / Adipocytokine signaling pathway / Signaling by Leptin	GO:0007260	KEGG:04920	REAC:R-HSA-2586552	GO:0036211;GO:0006793;GO:0032502;GO:0050789;GO:0050896	-
+96	R1	e019_R1	clathrin-dependent endocytosis / Clathrin-mediated endocytosis	GO:0072583	NA	REAC:R-HSA-8856828	GO:0016192	-
+97	R1	e019_R1	Notch signaling pathway / Notch signaling pathway / Regulation of FZD by ubiquitination	GO:0007219	KEGG:04330	REAC:R-HSA-4641263	GO:0050789;GO:0048771;GO:0007154	-
+98	R1	e019_R1	tricarboxylic acid cycle / Citrate cycle (TCA cycle) / Pyruvate metabolism and Citric Acid (TCA) cycle	GO:0006099	KEGG:00020	REAC:R-HSA-71406	GO:0006082;GO:0045333;GO:0006790;GO:0043603;GO:0009117	-
+99	R1	e019_R1	plasma lipoprotein particle clearance / Cholesterol metabolism / Plasma lipoprotein assembly, remodeling, and clearance	GO:0034381	KEGG:04979	REAC:R-HSA-174824	GO:0006869;GO:0044255;GO:0016043;GO:0050789;GO:0032501	-
+100	R1	e019_R1	spindle organization / Centrosome maturation	GO:0007051	NA	REAC:R-HSA-380287	GO:0022607;GO:0007059;GO:0006996	-
+101	R1	e019_R1	tRNA threonylcarbamoyladenosine metabolic process / tRNA modification in the nucleus and cytosol	GO:0070525	NA	REAC:R-HSA-6782315	GO:0006396;GO:0043412	-
+102	R1	e019_R1	Formation of the cornified envelope	NA	NA	REAC:R-HSA-6809371	NA	-
+103	R1	e019_R1	exocytosis	GO:0006887	NA	NA	GO:0050789;GO:0046903;GO:0016192	-
+104	R1	e019_R1	DNA-templated DNA replication / Cell cycle / Activation of the pre-replicative complex	GO:0006261	KEGG:04110	REAC:R-HSA-68962	GO:0032392;GO:0050789;GO:0006260;GO:0006281	-
+105	R1	e019_R1	nuclear transport / Nucleocytoplasmic transport / Defective TPR may confer susceptibility towards thyroid papillary carcinoma (TPC)	GO:0051169	KEGG:03013	REAC:R-HSA-5619107	GO:0015931;GO:0051641;GO:0006997	-
+106	R1	e019_R1	DNA methylation / Systemic lupus erythematosus / DNA methylation	GO:0006306	KEGG:05322	REAC:R-HSA-5334118	GO:0065003;GO:0006304	-
+107	R1	e019_R1	protein ubiquitination / Neddylation	GO:0016567	NA	REAC:R-HSA-8951664	GO:0036211;GO:0006508;GO:0009057	-
+108	R1	e019_R1	Hypusine synthesis from eIF5A-lysine	NA	NA	REAC:R-HSA-204626	NA	-
+109	R1	e019_R1	protein lipidation / Autophagy - other	GO:0006497	KEGG:04136	NA	GO:0036211;GO:0009059;GO:0006914	-
+110	R1	e019_R1	reciprocal meiotic recombination / Homologous recombination / Resolution of D-loop Structures through Holliday Junction Intermediates	GO:0007131	KEGG:03440	REAC:R-HSA-5693568	GO:0000003;GO:0000280;GO:0007049;GO:0006281	-
+111	R1	e019_R1	vacuolar acidification / Collecting duct acid secretion / Insulin receptor recycling	GO:0007035	KEGG:04966	REAC:R-HSA-77387	GO:1902600;GO:0009117;GO:0065007	-
+112	R1	e019_R1	SCF-dependent proteasomal ubiquitin-dependent protein catabolic process / Ubiquitin mediated proteolysis / Antigen processing: Ubiquitination & Proteasome degradation	GO:0031146	KEGG:04120	REAC:R-HSA-983168	GO:0006508;GO:0009057	-
+113	R1	e019_R1	stress-activated MAPK cascade / MAPK signaling pathway / MAP kinase activation	GO:0051403	KEGG:04010	REAC:R-HSA-450294	GO:0050789;GO:0050896;GO:0065009	-
+114	R1	e019_R1	peptidyl-cysteine S-nitrosylation	GO:0018119	NA	NA	GO:0036211	-
+115	R1	e019_R1	regulation of tyrosine phosphorylation of STAT protein / JAK-STAT signaling pathway / IL-6-type cytokine receptor ligand interactions	GO:0042509	KEGG:04630	REAC:R-HSA-6788467	GO:0050789;GO:0036211;GO:0001816;GO:0006793;GO:0002376;GO:0008283;GO:0050896;GO:0001775	-
+116	R1	e019_R1	positive regulation of peptidyl-serine phosphorylation of STAT protein / Toll-like receptor signaling pathway / Regulation of IFNA/IFNB signaling	GO:0033141	KEGG:04620	REAC:R-HSA-912694	GO:0036211;GO:0006793;GO:0002376;GO:0001775;GO:0050789;GO:0050896;GO:0044419	-
+117	R1	e019_R1	regulation of Arp2/3 complex-mediated actin nucleation / Negative regulation of MAPK pathway	GO:0034315	NA	REAC:R-HSA-5675221	GO:0065008;GO:0050789;GO:0051258;GO:0051261	-
+118	R1	e019_R1	Endometrial cancer / Signaling by PDGFRA extracellular domain mutants	NA	KEGG:05213	REAC:R-HSA-9673770	GO:0006351;GO:0050789;GO:0044255;GO:0006793	-
+119	R1	e019_R1	cilium assembly / Endocytosis / BBSome-mediated cargo-targeting to cilium	GO:0060271	KEGG:04144	REAC:R-HSA-5620922	GO:0022607;GO:0051641;GO:0016192;GO:0006996	-
+120	R1	e019_R1	interstrand cross-link repair / Fanconi anemia pathway / Deposition of new CENPA-containing nucleosomes at the centromere	GO:0036297	KEGG:03460	REAC:R-HSA-606279	GO:0036211;GO:0007059;GO:0051276;GO:0006281	-
+121	R1	e019_R1	[2Fe-2S] cluster assembly / Sulfur relay system	GO:0044571	KEGG:04122	NA	GO:0022607;GO:0006790	-
+122	R1	e019_R1	outer mitochondrial membrane organization / Cristae formation	GO:0007008	NA	REAC:R-HSA-8949613	GO:0061024;GO:0007005;GO:0015031	-
+123	R1	e019_R1	tRNA splicing, via endonucleolytic cleavage and ligation / tRNA processing in the nucleus	GO:0006388	NA	REAC:R-HSA-6784531	GO:0006396	-
+124	R1	e019_R1	antigen processing and presentation, exogenous lipid antigen via MHC class Ib / Iron uptake and transport	GO:0048007	NA	REAC:R-HSA-917937	GO:0002376;GO:0006811;GO:0050789	-
+125	R1	e019_R1	release of cytochrome c from mitochondria / Apoptosis - multiple species / BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members	GO:0001836	KEGG:04215	REAC:R-HSA-111453	GO:0061024;GO:0065008;GO:0007005;GO:0050789;GO:0050896	-
+126	R1	e019_R1	N-terminal protein amino acid acetylation	GO:0006474	NA	NA	GO:0036211;GO:0051604	-
+127	R1	e019_R1	actin-myosin filament sliding / Tight junction / RHO GTPases activate CIT	GO:0033275	KEGG:04530	REAC:R-HSA-5625900	GO:0032502;GO:0006936	-
+128	R1	e019_R1	formation of cytoplasmic translation initiation complex / Formation of the ternary complex, and subsequently, the 43S complex	GO:0001732	NA	REAC:R-HSA-72695	GO:0065003;GO:0006412	-
+129	R1	e019_R1	receptor signaling pathway via JAK-STAT / JAK-STAT signaling pathway / Interleukin-9 signaling	GO:0007259	KEGG:04630	REAC:R-HSA-8985947	GO:0050789;GO:0050896	-
+130	R1	e019_R1	response to interleukin-15 / JAK-STAT signaling pathway / Interleukin-2 signaling	GO:0070672	KEGG:04630	REAC:R-HSA-9020558	GO:0001816;GO:0002376;GO:0050789;GO:0050896;GO:0001775	-
+131	R1	e019_R1	protein modification by small protein conjugation / Nucleotide excision repair / Neddylation	GO:0032446	KEGG:03420	REAC:R-HSA-8951664	GO:0036211	-
+132	R1	e019_R1	histone methylation / Transcriptional Regulation by E2F6	GO:0016571	NA	REAC:R-HSA-8953750	GO:0036211;GO:0016043	-
+133	R1	e019_R1	histone H4 acetylation / HATs acetylate histones	GO:0043967	NA	REAC:R-HSA-3214847	GO:0036211;GO:0050789	-
+134	R1	e019_R1	necroptotic process / Necroptosis / Regulation by c-FLIP	GO:0070266	KEGG:04217	REAC:R-HSA-3371378	GO:0050789;GO:0065009	-
+135	R1	e019_R1	mRNA 3'-end processing / mRNA surveillance pathway / Processing of Intronless Pre-mRNAs	GO:0031124	KEGG:03015	REAC:R-HSA-77595	GO:0006396	-
+136	R1	e019_R1	histone H3-K4 methylation / Adherens junction / WNT mediated activation of DVL	GO:0051568	KEGG:04520	REAC:R-HSA-201688	GO:0036211;GO:0050789;GO:0016043	-
+137	R1	e019_R1	histone deacetylation	GO:0016575	NA	NA	GO:0036211;GO:0016043	-
+138	R1	e019_R1	melanosome assembly / Lysosome / Nef-mediates down modulation of cell surface receptors by recruiting them to clathrin adapters	GO:1903232	KEGG:04142	REAC:R-HSA-164938	GO:0051641;GO:0048753;GO:0051640;GO:0006810;GO:0022607;GO:0043473	-
+139	R1	e019_R1	DNA synthesis involved in DNA repair / DNA replication / Translesion synthesis by Y family DNA polymerases bypasses lesions on DNA template	GO:0000731	KEGG:03030	REAC:R-HSA-110313	GO:0009059;GO:0006260;GO:0006281	-
+140	R1	e019_R1	protein folding	GO:0006457	NA	NA	GO:0006457	-
+141	R1	e019_R1	sphingoid biosynthetic process / Sphingolipid de novo biosynthesis	GO:0046520	NA	REAC:R-HSA-1660661	GO:0043603;GO:0006066;GO:0044255	-
+142	R1	e019_R1	actin cytoskeleton organization	GO:0030036	NA	NA	GO:0006996	-
+143	R1	e019_R1	positive regulation of fibrinolysis / Complement and coagulation cascades / Intrinsic Pathway of Fibrin Clot Formation	GO:0051919	KEGG:04610	REAC:R-HSA-140837	GO:0006811;GO:0050878;GO:0002376;GO:0050789;GO:0050896	-
+144	R1	e019_R1	base-excision repair / Base excision repair / APEX1-Independent Resolution of AP Sites via the Single Nucleotide Replacement Pathway	GO:0006284	KEGG:03410	REAC:R-HSA-5649702	GO:0006260;GO:0006281	-
+145	R1	e019_R1	negative regulation of stem cell population maintenance	GO:1902455	NA	NA	GO:0032502;GO:0050789;GO:0032501	-
+146	R1	e019_R1	spindle organization / Nucleocytoplasmic transport	GO:0007051	KEGG:03013	NA	GO:0050789;GO:0006996	-
+147	R1	e019_R1	Cellular senescence / Transcription of E2F targets under negative control by p107 (RBL1) and p130 (RBL2) in complex with HDAC1	NA	KEGG:04218	REAC:R-HSA-1362300	GO:0050789	-
+148	R1	e019_R1	endodermal cell fate specification / Transcriptional regulation of pluripotent stem cells	GO:0001714	NA	REAC:R-HSA-452723	GO:0032502	-
+149	R1	e019_R1	microtubule-based process / Salmonella infection / Kinesins	GO:0007017	KEGG:05132	REAC:R-HSA-983189	GO:0006810;GO:0051641;GO:0007049;GO:0006996;GO:0051640;GO:0051261	-
+150	R1	e019_R1	activation of cysteine-type endopeptidase activity involved in apoptotic process by cytochrome c / Apoptosis - multiple species / SMAC (DIABLO) binds to IAPs 	GO:0008635	KEGG:04215	REAC:R-HSA-111463	GO:0042445;GO:0044255;GO:0050789;GO:0006805;GO:0065009	-
+151	R1	e019_R1	adiponectin-activated signaling pathway / Adipocytokine signaling pathway / CD28 dependent PI3K/Akt signaling	GO:0033211	KEGG:04920	REAC:R-HSA-389357	GO:0050789;GO:0050896;GO:0008643;GO:0044255	-
+152	R1	e019_R1	corticotropin secretion / Neuroactive ligand-receptor interaction / Vasopressin-like receptors	GO:0051458	KEGG:04080	REAC:R-HSA-388479	GO:0046903;GO:0015833;GO:0009914;GO:0050886;GO:0050789	-
+153	R1	e019_R1	multivesicular body assembly / Endocytosis / Endosomal Sorting Complex Required For Transport (ESCRT)	GO:0036258	KEGG:04144	REAC:R-HSA-917729	GO:0061024;GO:0009057;GO:0007032;GO:0015031;GO:0006508;GO:0006914;GO:0016192;GO:0016032;GO:0022607;GO:0044419	-
+154	R1	e019_R1	post-translational protein targeting to endoplasmic reticulum membrane / Insertion of tail-anchored proteins into the endoplasmic reticulum membrane	GO:0006620	NA	REAC:R-HSA-9609523	GO:0015031	-
+155	R1	e019_R1	attachment of GPI anchor to protein / Glycosylphosphatidylinositol (GPI)-anchor biosynthesis / Attachment of GPI anchor to uPAR	GO:0016255	KEGG:00563	REAC:R-HSA-162791	GO:0036211;GO:0044255;GO:0009059;GO:0006793	-
+156	R1	e019_R1	SREBP signaling pathway / Regulation of cholesterol biosynthesis by SREBP (SREBF)	GO:0032933	NA	REAC:R-HSA-1655829	GO:0015031;GO:0009057;GO:0006508;GO:0050789;GO:0050896	-
+157	R1	e019_R1	Loss of MECP2 binding ability to the NCoR/SMRT complex	NA	NA	REAC:R-HSA-9022537	GO:0050789	-
+158	R1	e019_R1	mRNA export from nucleus / Transport of Mature mRNA derived from an Intron-Containing Transcript	GO:0006406	NA	REAC:R-HSA-159236	GO:0015931;GO:0051641	-
+159	R1	e019_R1	receptor guanylyl cyclase signaling pathway / Phototransduction / Inactivation, recovery and regulation of the phototransduction cascade	GO:0007168	KEGG:04744	REAC:R-HSA-2514859	GO:0050877;GO:0050789	-
+160	R1	e019_R1	sister chromatid cohesion / Cell cycle / Cohesin Loading onto Chromatin	GO:0007062	KEGG:04110	REAC:R-HSA-2470946	GO:0036211;GO:0050789;GO:0051276;GO:0006281	-
+161	R1	e019_R1	peroxisomal membrane transport / Peroxisome / Class I peroxisomal membrane protein import	GO:0015919	KEGG:04146	REAC:R-HSA-9603798	GO:0006082;GO:0015031;GO:0006869;GO:0007031;GO:0015849;GO:0044255;GO:0050789	-
+162	R1	e019_R1	Bacterial invasion of epithelial cells / Post-chaperonin tubulin folding pathway	NA	KEGG:05100	REAC:R-HSA-389977	GO:0006457	-
+163	R1	e019_R1	lactate transport / Proton-coupled monocarboxylate transport	GO:0015727	NA	REAC:R-HSA-433692	GO:0022411;GO:0045229;GO:0043062;GO:0015849;GO:0050896	-
+164	R1	e019_R1	sodium ion export across plasma membrane / Proximal tubule bicarbonate reclamation / Ion transport by P-type ATPases	GO:0036376	KEGG:04964	REAC:R-HSA-936837	GO:0050789;GO:0006811	-
+165	R1	e019_R1	muscle organ development / ECM-receptor interaction / Laminin interactions	GO:0007517	KEGG:04512	REAC:R-HSA-3000157	GO:0032502;GO:0006936;GO:0007155;GO:0016043	-
+166	R1	e019_R1	G protein-coupled receptor signaling pathway / Chemokine signaling pathway / GPCR ligand binding	GO:0007186	KEGG:04062	REAC:R-HSA-500792	GO:0040011;GO:0002376;GO:0050789	-
+167	R1	e019_R1	establishment or maintenance of epithelial cell apical/basal polarity / Hippo signaling pathway	GO:0045197	KEGG:04390	NA	GO:0016070;GO:0043412	-
+168	R1	e019_R1	positive regulation of transforming growth factor beta receptor signaling pathway / Regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells	GO:0030511	NA	REAC:R-HSA-210744	GO:0050789	-
+169	R1	e019_R1	TORC2 signaling / mTOR signaling pathway / Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex	GO:0038203	KEGG:04150	REAC:R-HSA-75035	GO:0050789	-
+170	R1	e019_R1	histone H3-K4 methylation / Chromatin modifying enzymes	GO:0051568	NA	REAC:R-HSA-3247509	GO:0036211	-
+171	R1	e019_R1	pyroptosis / NOD-like receptor signaling pathway / Deadenylation of mRNA	GO:0070269	KEGG:04621	REAC:R-HSA-429947	GO:0065003;GO:0001816;GO:0050789;GO:0050896;GO:0065009	-
+172	R1	e019_R1	Systemic lupus erythematosus / RNA Polymerase I Promoter Opening	NA	KEGG:05322	REAC:R-HSA-73728	GO:0050789;GO:0051641;GO:0065003	-
+173	R1	e019_R1	regulation of lysosome size	GO:0062196	NA	NA	GO:0006810;GO:0051641;GO:0065008;GO:0051640;GO:0016043	-
+174	R1	e019_R1	Defective CUBN causes MGA1	NA	NA	REAC:R-HSA-3359463	GO:0051180	-
+175	R1	e019_R1	regulation of mRNA metabolic process / Spliceosome / mRNA Splicing - Major Pathway	GO:1903311	KEGG:03040	REAC:R-HSA-72163	GO:0006351;GO:0065008;GO:0000375;GO:0050789	-
+176	R1	e019_R1	response to muramyl dipeptide / NOD-like receptor signaling pathway / NOD1/2 Signaling Pathway	GO:0032495	KEGG:04621	REAC:R-HSA-168638	GO:0002376;GO:0050789;GO:0050896;GO:0065009	-
+177	R1	e019_R1	canonical Wnt signaling pathway / Wnt signaling pathway / Negative regulation of TCF-dependent signaling by WNT ligand antagonists	GO:0060070	KEGG:04310	REAC:R-HSA-3772470	GO:0032502;GO:0007154;GO:0050789;GO:0032501;GO:0050896	-
+178	R1	e019_R1	regulation of plasminogen activation / Dissolution of Fibrin Clot	GO:0010755	NA	REAC:R-HSA-75205	GO:0050878;GO:0006508;GO:0051604;GO:0050789;GO:0050896	-
+179	R1	e019_R1	protein insertion into ER membrane by stop-transfer membrane-anchor sequence	GO:0045050	NA	NA	GO:0051641;GO:0051234	-
+180	R1	e019_R1	microtubule-based process / Huntington disease / COPI-independent Golgi-to-ER retrograde traffic	GO:0007017	KEGG:05016	REAC:R-HSA-6811436	GO:0006996	-
+181	R1	e019_R1	neurofilament bundle assembly	GO:0033693	NA	NA	GO:0022607;GO:0006996	-
+182	R1	e019_R1	ncRNA catabolic process / RNA degradation / mRNA decay by 3' to 5' exoribonuclease	GO:0034661	KEGG:03018	REAC:R-HSA-429958	GO:0050789;GO:0006396;GO:0009057	-
+183	R1	e019_R1	establishment or maintenance of epithelial cell apical/basal polarity / Dopamine Neurotransmitter Release Cycle	GO:0045197	NA	REAC:R-HSA-212676	GO:0008150	-
+184	R1	e019_R1	mismatch repair / DNA replication	GO:0006298	KEGG:03030	NA	GO:0016070;GO:0006281;GO:0009057	-
+185	R1	e019_R1	RNA-templated DNA biosynthetic process / Telomere Extension By Telomerase	GO:0006278	NA	REAC:R-HSA-171319	GO:0051641;GO:0009059;GO:0006396;GO:0051276;GO:0006259;GO:0043412;GO:0050789;GO:0044085;GO:0065009	-
+186	R1	e019_R1	response to molecule of bacterial origin / MyD88 deficiency (TLR2/4)	GO:0002237	NA	REAC:R-HSA-5602498	GO:0051606;GO:0002376;GO:0050789;GO:0044419	-
+187	R1	e019_R1	canonical Wnt signaling pathway / Repression of WNT target genes	GO:0060070	NA	REAC:R-HSA-4641265	GO:0050789;GO:0007154	-
+188	R1	e019_R1	calcium ion-regulated exocytosis of neurotransmitter / Insulin secretion / ATP sensitive Potassium channels	GO:0048791	KEGG:04911	REAC:R-HSA-1296025	GO:0006836;GO:0046903;GO:0016049;GO:0065008;GO:0016192;GO:0050789	-
+189	R1	e019_R1	Malaria	NA	KEGG:05144	NA	NA	-
+190	R1	e019_R1	integrated stress response signaling / Osteoclast differentiation / NGF-stimulated transcription	GO:0140467	KEGG:04380	REAC:R-HSA-9031628	GO:0050789;GO:0050896	-
+191	R1	e019_R1	canonical Wnt signaling pathway / Wnt signaling pathway / Beta-catenin phosphorylation cascade	GO:0060070	KEGG:04310	REAC:R-HSA-196299	GO:0050789;GO:0007154	-
+192	R1	e019_R1	RET signaling	NA	NA	REAC:R-HSA-8853659	GO:0032502;GO:0050877	-
+193	R1	e019_R1	blood coagulation, intrinsic pathway / GP1b-IX-V activation signalling	GO:0007597	NA	REAC:R-HSA-430116	GO:0051604;GO:0032502;GO:0050789;GO:0050896;GO:0001775	-
+194	R1	e019_R1	cellular response to tumor necrosis factor / NF-kappa B signaling pathway / TNF receptor superfamily (TNFSF) members mediating non-canonical NF-kB pathway	GO:0071356	KEGG:04064	REAC:R-HSA-5676594	GO:0002376;GO:0050789;GO:0050896	-
+195	R1	e019_R1	Relaxin receptors	NA	NA	REAC:R-HSA-444821	NA	-
+196	R1	e019_R1	monoubiquitinated histone H2A deubiquitination / Basal transcription factors / RNA Polymerase II Transcription Initiation	GO:0035522	KEGG:03022	REAC:R-HSA-75953	GO:0009059;GO:0065003;GO:0036211;GO:0016070;GO:0006508	-
+197	R1	e019_R1	SCF-dependent proteasomal ubiquitin-dependent protein catabolic process / Neddylation	GO:0031146	NA	REAC:R-HSA-8951664	GO:0006508;GO:0009057	-
+198	R1	e019_R1	positive regulation of DNA metabolic process / Homologous recombination / Nonhomologous End-Joining (NHEJ)	GO:0051054	KEGG:03440	REAC:R-HSA-5693571	GO:0050789;GO:0006281	-
+199	R1	e019_R1	positive regulation of calcium ion transport into cytosol / Elevation of cytosolic Ca2+ levels	GO:0010524	NA	REAC:R-HSA-139853	GO:0065008;GO:0006811;GO:0050789	-
+200	R1	e019_R1	cellular response to growth factor stimulus / Neurotrophin signaling pathway / Interleukin-3, Interleukin-5 and GM-CSF signaling	GO:0071363	KEGG:04722	REAC:R-HSA-512988	GO:0050789;GO:0050896	-
+201	R1	e019_R1	Transmission across Electrical Synapses 	NA	NA	REAC:R-HSA-112307	GO:0065008;GO:0050789	-
+202	R1	e019_R1	actin polymerization or depolymerization / Regulation of actin cytoskeleton	GO:0008154	KEGG:04810	NA	GO:0050789;GO:0006996	-
+203	R1	e019_R1	positive regulation of transcription initiation by RNA polymerase II / Transcriptional regulation of white adipocyte differentiation	GO:0060261	NA	REAC:R-HSA-381340	GO:0050789	-
+204	R1	e019_R1	cytoplasmic translation	GO:0002181	NA	NA	GO:0006412	-
+205	R1	e019_R1	I-kappaB kinase/NF-kappaB signaling / RIG-I-like receptor signaling pathway / IKBKB deficiency causes SCID	GO:0007249	KEGG:04622	REAC:R-HSA-5602636	GO:0050789;GO:0065009	-
+206	R1	e019_R1	monocyte chemotaxis / Viral protein interaction with cytokine and cytokine receptor	GO:0002548	KEGG:04061	NA	GO:0040011;GO:0002376;GO:0050789;GO:0050896	-
+207	R1	e019_R1	ECM-receptor interaction / Integrin cell surface interactions	NA	KEGG:04512	REAC:R-HSA-216083	GO:0045229;GO:0043062	-
+208	R1	e019_R1	nuclear transport / Nucleocytoplasmic transport / Processing and activation of SUMO	GO:0051169	KEGG:03013	REAC:R-HSA-3215018	GO:0036211;GO:0015031	-
+209	R1	e019_R1	phototransduction / Phototransduction / Inactivation, recovery and regulation of the phototransduction cascade	GO:0007602	KEGG:04744	REAC:R-HSA-2514859	GO:0050877;GO:0051606;GO:0050789	-
+210	R1	e019_R1	ECM-receptor interaction / Integrin cell surface interactions	NA	KEGG:04512	REAC:R-HSA-216083	GO:0032502;GO:0045229;GO:0043062	-
+211	R1	e019_R1	neutrophil chemotaxis / Viral protein interaction with cytokine and cytokine receptor / Chemokine receptors bind chemokines	GO:0030593	KEGG:04061	REAC:R-HSA-380108	GO:0002376;GO:0040011;GO:0050789;GO:0050896;GO:0044419	-
+212	R1	e019_R1	GnRH signaling pathway / Hormone ligand-binding receptors	NA	KEGG:04912	REAC:R-HSA-375281	NA	-
+213	R1	e019_R1	phosphatidylinositol-3-phosphate biosynthetic process / Autophagy - animal / Translation of Replicase and Assembly of the Replication Transcription Complex	GO:0036092	KEGG:04140	REAC:R-HSA-9679504	GO:0022411;GO:0050789;GO:0007033;GO:0015031;GO:0006793;GO:0006914;GO:0007154;GO:0007005;GO:0044255;GO:0022607;GO:0050896;GO:0065009	-
+214	R1	e019_R1	toll-like receptor signaling pathway / Toll-like receptor signaling pathway / Trafficking and processing of endosomal TLR	GO:0002224	KEGG:04620	REAC:R-HSA-1679131	GO:0002376;GO:0050789	-
+215	R1	e019_R1	regulation of cyclin-dependent protein serine/threonine kinase activity / Cell cycle / Defective binding of RB1 mutants to E2F1,(E2F2, E2F3)	GO:0000079	KEGG:04110	REAC:R-HSA-9661069	GO:0050789;GO:0007049;GO:0065009	-
+216	R1	e019_R1	JAK-STAT signaling pathway / Interleukin-20 family signaling	NA	KEGG:04630	REAC:R-HSA-8854691	GO:0050789;GO:0050896	-
+217	R1	e019_R1	Fat digestion and absorption / Transport of fatty acids	NA	KEGG:04975	REAC:R-HSA-804914	GO:0051179	-
+218	R1	e019_R1	bicellular tight junction assembly / Tight junction / Tight junction interactions	GO:0070830	KEGG:04530	REAC:R-HSA-420029	GO:0032502;GO:0022607;GO:0032501;GO:0007155	-
+219	R1	e019_R1	G protein-coupled receptor signaling pathway / Morphine addiction / GABA B receptor activation	GO:0007186	KEGG:05032	REAC:R-HSA-977444	GO:0050789	-
+220	R1	e019_R1	cell fate commitment / Transcriptional misregulation in cancer / RUNX1 regulates transcription of genes involved in differentiation of HSCs	GO:0045165	KEGG:05202	REAC:R-HSA-8939236	GO:0032502	-
+221	R1	e019_R1	positive regulation of stem cell differentiation / Transcriptional regulation of testis differentiation	GO:2000738	NA	REAC:R-HSA-9690406	GO:0032502;GO:0050789	-
+222	R1	e019_R1	negative regulation of smoothened signaling pathway / Hedgehog signaling pathway / Hedgehog 'on' state	GO:0045879	KEGG:04340	REAC:R-HSA-5632684	GO:0051641;GO:0032502;GO:0051640;GO:0006810;GO:0050789;GO:0065009	-
+223	R1	e019_R1	nuclear-transcribed mRNA poly(A) tail shortening / TP53 regulates transcription of additional cell cycle genes whose exact role in the p53 pathway remain uncertain	GO:0000289	NA	REAC:R-HSA-6804115	GO:0016070;GO:0065008;GO:0050789;GO:0009057	-
+224	R1	e019_R1	ADP signalling through P2Y purinoceptor 12	NA	NA	REAC:R-HSA-392170	GO:0050789	-
+225	R1	e019_R1	endocytic recycling	GO:0032456	NA	NA	GO:0051641;GO:0016192	-
+226	R1	e019_R1	natural killer cell mediated cytotoxicity / Natural killer cell mediated cytotoxicity	GO:0042267	KEGG:04650	NA	GO:0001906;GO:0050896;GO:0044419;GO:0002376	-
+227	R1	e019_R1	hippo signaling / Hippo signaling pathway - multiple species / Signaling by Hippo	GO:0035329	KEGG:04392	REAC:R-HSA-2028269	GO:0050789	-
+228	R1	e019_R1	Synthesis of PIPs at the late endosome membrane	NA	NA	REAC:R-HSA-1660517	GO:0044255;GO:0006793	-
+229	R1	e019_R1	phospholipid translocation	GO:0045332	NA	NA	GO:0065008;GO:0006869;GO:0061024	-
+230	R1	e019_R1	extracellular matrix organization / Elastic fibre formation	GO:0030198	NA	REAC:R-HSA-1566948	GO:0045229;GO:0022607;GO:0043062	-
+231	R1	e019_R1	cytoskeleton-dependent cytokinesis	GO:0061640	NA	NA	GO:0008150	-
+232	R1	e019_R1	mismatch repair / Mismatch repair / Mismatch repair (MMR) directed by MSH2:MSH3 (MutSbeta)	GO:0006298	KEGG:03430	REAC:R-HSA-5358606	GO:0006281	-
+233	R1	e019_R1	proteasome-mediated ubiquitin-dependent protein catabolic process / Neddylation	GO:0043161	NA	REAC:R-HSA-8951664	GO:0006508;GO:0009057	-
+234	R1	e019_R1	fructose 2,6-bisphosphate metabolic process / Regulation of glycolysis by fructose 2,6-bisphosphate metabolism	GO:0006003	NA	REAC:R-HSA-9634600	NA	-
+235	R1	e019_R1	sarcomere organization / Cardiac muscle contraction / Striated Muscle Contraction	GO:0045214	KEGG:04260	REAC:R-HSA-390522	GO:0006996;GO:0050877;GO:0050879;GO:0032502;GO:0006936;GO:0022607	-
+236	R1	e019_R1	calcium ion transmembrane transport / Nephrin family interactions	GO:0070588	NA	REAC:R-HSA-373753	GO:0006811;GO:0065003	-
+237	R1	e019_R1	response to fungus / Fc epsilon RI signaling pathway / Dectin-2 family	GO:0009620	KEGG:04664	REAC:R-HSA-5621480	GO:0050789;GO:0001816;GO:0002376;GO:0040011;GO:0022607;GO:0050896;GO:0044419	-
+238	R1	e019_R1	interleukin-1-mediated signaling pathway / Cytokine-cytokine receptor interaction / Interleukin-1 family signaling	GO:0070498	KEGG:04060	REAC:R-HSA-446652	GO:0002376;GO:0050789;GO:0050896	-
+239	R1	e019_R1	glycogen biosynthetic process / Dopaminergic synapse / Glycogen synthesis	GO:0005978	KEGG:04728	REAC:R-HSA-3322077	GO:0050789;GO:0009059;GO:0006112;GO:0036211;GO:0006793;GO:0005976	-
+240	R1	e019_R1	excitatory chemical synaptic transmission / Glutamatergic synapse / Neurotransmitter receptors and postsynaptic signal transmission	GO:0098976	KEGG:04724	REAC:R-HSA-112314	GO:0050789;GO:0007154	-
+241	R1	e019_R1	endoplasmic reticulum to Golgi vesicle-mediated transport / trans-Golgi Network Vesicle Budding	GO:0006888	NA	REAC:R-HSA-199992	GO:0007030;GO:0051641;GO:0016192	-
+242	R1	e019_R1	protein folding / Protein processing in endoplasmic reticulum / Unfolded Protein Response (UPR)	GO:0006457	KEGG:04141	REAC:R-HSA-381119	GO:0050789;GO:0006457;GO:0050896	-
+243	R1	e019_R1	regulation of synapse organization / NGF-stimulated transcription	GO:0050807	NA	REAC:R-HSA-9031628	GO:0032989;GO:0065008;GO:0050789	-
+244	R1	e019_R1	snRNA transcription by RNA polymerase II / Viral life cycle - HIV-1 / RNA Polymerase II Transcription Elongation	GO:0042795	KEGG:03250	REAC:R-HSA-75955	GO:0006351;GO:0022607;GO:0050789;GO:0006790	-
+245	R1	e019_R1	postsynapse organization / Protein-protein interactions at synapses	GO:0099173	NA	REAC:R-HSA-6794362	GO:0050789;GO:0007154;GO:0016043	-
+246	R1	e019_R1	anterior/posterior pattern specification	GO:0009952	NA	NA	GO:0032501	-
+247	R1	e019_R1	positive regulation of natural killer cell mediated cytotoxicity directed against tumor cell target / Adherens junction / Nectin/Necl  trans heterodimerization	GO:0002860	KEGG:04520	REAC:R-HSA-420597	GO:0002376;GO:0001906;GO:0050789;GO:0050896;GO:0044419;GO:0007155	-
+248	R1	e019_R1	COPII-coated vesicle budding / ER to Golgi Anterograde Transport	GO:0090114	NA	REAC:R-HSA-199977	GO:0051641;GO:0016050;GO:0016192;GO:0061024	-
+249	R1	e019_R1	microtubule cytoskeleton organization involved in mitosis / Loss of Nlp from mitotic centrosomes	GO:1902850	NA	REAC:R-HSA-380259	GO:0051640;GO:0051234;GO:0006996	-
+250	R1	e019_R1	protein import into peroxisome matrix / Peroxisome / Peroxisomal protein import	GO:0016558	KEGG:04146	REAC:R-HSA-9033241	GO:0044255;GO:0006082;GO:0007031;GO:0015031	-
+251	R1	e019_R1	gap junction assembly / Gap junction assembly	GO:0016264	NA	REAC:R-HSA-190861	GO:0036211;GO:0022607;GO:0006810	-
+252	R1	e019_R1	positive regulation of multicellular organism growth / Growth hormone synthesis, secretion and action / GPCR ligand binding	GO:0040018	KEGG:04935	REAC:R-HSA-500792	GO:0040007;GO:0046903;GO:0015833;GO:0009914;GO:0050789;GO:0032501;GO:0050896	-
+253	R1	e019_R1	glutathione metabolic process / Glutathione metabolism / Glutathione conjugation	GO:0006749	KEGG:00480	REAC:R-HSA-156590	GO:0006725;GO:0006807;GO:0006805	-
+254	R1	e019_R1	cell-cell adhesion / Adherens junctions interactions	GO:0098609	NA	REAC:R-HSA-418990	GO:0007155;GO:0016043	-
+255	R1	e019_R1	calcitonin family receptor signaling pathway / Vascular smooth muscle contraction / Calcitonin-like ligand receptors	GO:0097646	KEGG:04270	REAC:R-HSA-419812	GO:0002376;GO:0016192;GO:0050789;GO:0050896;GO:0044419	-
+256	R1	e019_R1	hippo signaling / Hippo signaling pathway - multiple species / RUNX3 regulates YAP1-mediated transcription	GO:0035329	KEGG:04392	REAC:R-HSA-8951671	GO:0050789;GO:0050896	-
+257	R1	e019_R1	positive regulation of interferon-beta production / RIG-I-like receptor signaling pathway / TRAF3-dependent IRF activation pathway	GO:0032728	KEGG:04622	REAC:R-HSA-918233	GO:0001816;GO:0002376;GO:0050789;GO:0050896;GO:0044419	-
+258	R1	e019_R1	prenylation / RAB geranylgeranylation	GO:0097354	NA	REAC:R-HSA-8873719	GO:0036211;GO:0015031	-
+259	R1	e019_R1	cilium assembly / Anchoring of the basal body to the plasma membrane	GO:0060271	NA	REAC:R-HSA-5620912	GO:0022607;GO:0006996	-
+260	R1	e019_R1	chondroitin sulfate biosynthetic process / Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate / Chondroitin sulfate biosynthesis	GO:0030206	KEGG:00532	REAC:R-HSA-2022870	GO:0019538;GO:0009059;GO:0006790	-
+261	R1	e019_R1	positive regulation of respiratory gaseous exchange / Neuroactive ligand-receptor interaction / Peptide ligand-binding receptors	GO:1903942	KEGG:04080	REAC:R-HSA-375276	GO:0050789	-
+262	R1	e019_R1	regulation of establishment of cell polarity / Retrograde transport at the Trans-Golgi-Network	GO:2000114	NA	REAC:R-HSA-6811440	GO:0050789;GO:0032501	-
+263	R1	e019_R1	protein deneddylation / DNA Damage Recognition in GG-NER	GO:0000338	NA	REAC:R-HSA-5696394	GO:0036211;GO:0050789;GO:0006508	-
+264	R1	e019_R1	regulation of sequestering of triglyceride / Regulation of lipolysis in adipocytes / Triglyceride catabolism	GO:0010889	KEGG:04923	REAC:R-HSA-163560	GO:0050789;GO:0051179;GO:0044255	-
+265	R1	e019_R1	regulation of natural killer cell activation / Antigen processing and presentation / DAP12 interactions	GO:0032814	KEGG:04612	REAC:R-HSA-2172127	GO:0002376;GO:0001906;GO:0050789;GO:0050896;GO:0044419	-
+266	R1	e019_R1	piRNA processing / PIWI-interacting RNA (piRNA) biogenesis	GO:0034587	NA	REAC:R-HSA-5601884	GO:0050789;GO:0006396;GO:0006304	-
+267	R1	e019_R1	complement activation / Complement and coagulation cascades / Complement cascade	GO:0006956	KEGG:04610	REAC:R-HSA-166658	GO:0002376;GO:0050789;GO:0050896;GO:0044419	-
+268	R1	e019_R1	prenylation	GO:0097354	NA	NA	GO:0036211	-
+269	R1	e019_R1	substrate adhesion-dependent cell spreading / Regulation of cytoskeletal remodeling and cell spreading by IPP complex components	GO:0034446	NA	REAC:R-HSA-446388	GO:0050789;GO:0007155	-
+270	R1	e019_R1	protein folding in endoplasmic reticulum / Antigen processing and presentation / Antigen Presentation: Folding, assembly and peptide loading of class I MHC	GO:0034975	KEGG:04612	REAC:R-HSA-983170	GO:0036211;GO:0002376;GO:0006457;GO:0050896	-
+271	R1	e019_R1	snRNA processing / RNA polymerase II transcribes snRNA genes	GO:0016180	NA	REAC:R-HSA-6807505	GO:0050789;GO:0006396;GO:0006354	-
+272	R1	e019_R1	Mitophagy - animal / RAB GEFs exchange GTP for GDP on RABs	NA	KEGG:04137	REAC:R-HSA-8876198	GO:0006914	-
+273	R1	e019_R1	cAMP biosynthetic process / Morphine addiction / Adenylate cyclase activating pathway	GO:0006171	KEGG:05032	REAC:R-HSA-170660	GO:0050789;GO:0050896;GO:0009117	-
+274	R1	e019_R1	synaptic membrane adhesion / Cell adhesion molecules	GO:0099560	KEGG:04514	NA	GO:0045229;GO:0022607;GO:0043062;GO:0007155	-
+275	R1	e019_R1	Viral protein interaction with cytokine and cytokine receptor / Chemokine receptors bind chemokines	NA	KEGG:04061	REAC:R-HSA-380108	GO:0040011	-
+276	R1	e019_R1	endoplasmic reticulum to Golgi vesicle-mediated transport / COPI-dependent Golgi-to-ER retrograde traffic	GO:0006888	NA	REAC:R-HSA-6811434	GO:0051641;GO:0016050;GO:0016192;GO:0061024	-
+277	R1	e019_R1	positive regulation of protein neddylation / Neddylation	GO:2000436	NA	REAC:R-HSA-8951664	GO:0036211;GO:0050789	-
+278	R1	e019_R1	cAMP signaling pathway / VxPx cargo-targeting to cilium	NA	KEGG:04024	REAC:R-HSA-5620916	GO:0006811	-
+279	R1	e019_R1	Stimuli-sensing channels	NA	NA	REAC:R-HSA-2672351	NA	-
+280	R1	e019_R1	Golgi to plasma membrane transport / Neddylation	GO:0006893	NA	REAC:R-HSA-8951664	GO:0050789;GO:0051641;GO:0016192;GO:0065009	-
+281	R1	e019_R1	CDC42 GTPase cycle	NA	NA	REAC:R-HSA-9013148	GO:0065009	-
+282	R1	e019_R1	Glycosphingolipid metabolism	NA	NA	REAC:R-HSA-1660662	NA	-
+283	R1	e019_R1	protein localization to perinuclear region of cytoplasm / Salmonella infection / Intraflagellar transport	GO:1905719	KEGG:05132	REAC:R-HSA-5620924	GO:0051641;GO:0016192;GO:0006996	-
+284	R1	e019_R1	deoxyribose phosphate biosynthetic process / Glutathione metabolism / Interconversion of nucleotide di- and triphosphates	GO:0046385	KEGG:00480	REAC:R-HSA-499943	GO:0009117	-
+285	R1	e019_R1	potassium ion transmembrane transport / Voltage gated Potassium channels	GO:0071805	NA	REAC:R-HSA-1296072	GO:0006811	-
+286	R1	e019_R1	modulation of chemical synaptic transmission / Glutamatergic synapse / Neurexins and neuroligins	GO:0050804	KEGG:04724	REAC:R-HSA-6794361	GO:0050877;GO:0050789	-
+287	R1	e019_R1	regulation of ryanodine-sensitive calcium-release channel activity / Calcium signaling pathway	GO:0060314	KEGG:04020	NA	GO:0050789;GO:0006811;GO:0007154;GO:0065009	-
+288	R1	e019_R1	ribosomal large subunit biogenesis	GO:0042273	NA	NA	GO:0042254;GO:0006396	-
+289	R1	e019_R1	metallo-sulfur cluster assembly / Citrate cycle (TCA cycle) / Mitochondrial iron-sulfur cluster biogenesis	GO:0031163	KEGG:00020	REAC:R-HSA-1362409	GO:0045333;GO:0051604;GO:0006790;GO:0022607;GO:0022900	-
+290	R1	e019_R1	synaptic membrane adhesion / Receptor-type tyrosine-protein phosphatases	GO:0099560	NA	REAC:R-HSA-388844	GO:0022607;GO:0050789;GO:0007155	-
+291	R1	e019_R1	protein refolding / Attenuation phase	GO:0042026	NA	REAC:R-HSA-3371568	GO:0050789;GO:0006457;GO:0022607	-
+292	R1	e019_R1	histone ubiquitination / E3 ubiquitin ligases ubiquitinate target proteins	GO:0016574	NA	REAC:R-HSA-8866654	GO:0036211;GO:0006281	-
+293	R1	e019_R1	secondary alcohol biosynthetic process / Steroid biosynthesis / Cholesterol biosynthesis	GO:1902653	KEGG:00100	REAC:R-HSA-191273	GO:0006629;GO:0006066	-
+294	R1	e019_R1	ubiquinone biosynthetic process	GO:0006744	NA	NA	GO:0042180	-
+295	R1	e019_R1	peptidyl-diphthamide biosynthetic process from peptidyl-histidine / Synthesis of diphthamide-EEF2	GO:0017183	NA	REAC:R-HSA-5358493	GO:0036211;GO:0050789	-
+296	R1	e019_R1	smooth muscle contraction / Peptide ligand-binding receptors	GO:0006939	NA	REAC:R-HSA-375276	GO:0006936;GO:0050789	-
+297	R1	e019_R1	phosphatidylinositol dephosphorylation / Synthesis of PIPs at the early endosome membrane	GO:0046856	NA	REAC:R-HSA-1660516	GO:0044255;GO:0006793	-
+298	R1	e019_R1	calcium ion transport / Elevation of cytosolic Ca2+ levels	GO:0006816	NA	REAC:R-HSA-139853	GO:0006811	-
+299	R1	e019_R1	tRNA wobble uridine modification	GO:0002098	NA	NA	GO:0006396;GO:0043412	-
+300	R1	e019_R1	phosphatidylinositol phosphate biosynthetic process / Prolactin signaling pathway / Neddylation	GO:0046854	KEGG:04917	REAC:R-HSA-8951664	GO:0036211;GO:0044255;GO:0006793	-
+301	R1	e019_R1	semaphorin-plexin signaling pathway / Axon guidance / Other semaphorin interactions	GO:0071526	KEGG:04360	REAC:R-HSA-416700	GO:0032989;GO:0050789;GO:0040011;GO:0016049	-
+302	R1	e019_R1	amyloid precursor protein metabolic process	GO:0042982	NA	NA	GO:0019538	-
+304	R1	e019_R1	Insulin secretion / Ca2+ activated K+ channels	NA	KEGG:04911	REAC:R-HSA-1296052	GO:0050896	-
+305	R1	e019_R1	TNFs bind their physiological receptors	NA	NA	REAC:R-HSA-5669034	NA	-
+306	R1	e019_R1	cyclic-GMP-AMP transmembrane import across plasma membrane / Miscellaneous transport and binding events	GO:0140361	NA	REAC:R-HSA-5223345	GO:0015931;GO:0006811	-
+307	R1	e019_R1	myofibril assembly / Interaction between L1 and Ankyrins	GO:0030239	NA	REAC:R-HSA-445095	GO:0032502;GO:0022607;GO:0006996	-
+308	R1	e019_R1	serotonin receptor signaling pathway	GO:0007210	NA	NA	GO:0050789;GO:0050896	-
+309	R1	e019_R1	postsynaptic membrane assembly / Cell adhesion molecules / Neurexins and neuroligins	GO:0097104	KEGG:04514	REAC:R-HSA-6794361	GO:0051641;GO:0061024;GO:0050789;GO:0006996;GO:0065008;GO:0050896;GO:0022607;GO:0032501;GO:0044085;GO:0007155	-
+310	R1	e019_R1	positive regulation of cytokinesis / RHOB GTPase cycle	GO:0032467	NA	REAC:R-HSA-9013026	GO:0050789;GO:0051301	-
+311	R1	e019_R1	luteolysis / Axon guidance / Regulation of commissural axon pathfinding by SLIT and ROBO	GO:0001554	KEGG:04360	REAC:R-HSA-428542	GO:0008037;GO:0048511;GO:0032502;GO:0016043;GO:0040011;GO:0050789	-
+312	R1	e019_R1	ABC transporters / ABC transporter disorders	NA	KEGG:02010	REAC:R-HSA-5619084	GO:0050789	-
+313	R1	e019_R1	macromolecule methylation / tRNA modification in the nucleus and cytosol	GO:0043414	NA	REAC:R-HSA-6782315	GO:0016070;GO:0043412	-
+314	R1	e019_R1	Digestion	NA	NA	REAC:R-HSA-8935690	NA	-
+315	R1	e019_R1	mitotic sister chromatid segregation / Amplification  of signal from unattached  kinetochores via a MAD2  inhibitory signal	GO:0000070	NA	REAC:R-HSA-141444	GO:0000280;GO:0007049;GO:0051276;GO:0050789;GO:0007059	-
+316	R1	e019_R1	synaptic transmission, cholinergic / Highly calcium permeable postsynaptic nicotinic acetylcholine receptors	GO:0007271	NA	REAC:R-HSA-629594	GO:0065008;GO:0032501;GO:0050896;GO:0007154	-
+317	R1	e019_R1	DNA dealkylation involved in DNA repair / ALKBH3 mediated reversal of alkylation damage	GO:0006307	NA	REAC:R-HSA-112126	GO:0006508;GO:0006304;GO:0009057	-
+318	R1	e019_R1	autophagy of nucleus / Autophagy - other	GO:0044804	KEGG:04136	NA	GO:0022411;GO:0007033;GO:0022607;GO:0006914;GO:0007005;GO:0050789	-
+319	R1	e019_R1	BMP signaling pathway / TGF-beta signaling pathway / Germ layer formation at gastrulation	GO:0030509	KEGG:04350	REAC:R-HSA-9754189	GO:0050789;GO:0050896	-
+320	R1	e019_R1	Synthesis of Lipoxins (LX)	NA	NA	REAC:R-HSA-2142700	GO:0006082	-
+321	R1	e019_R1	adenylate cyclase-modulating G protein-coupled receptor signaling pathway / Glucagon-type ligand receptors	GO:0007188	NA	REAC:R-HSA-420092	GO:0050789	-
+322	R1	e019_R1	ribosome-associated ubiquitin-dependent protein catabolic process	GO:1990116	NA	NA	GO:0006508;GO:0009057	-
+323	R1	e019_R1	nuclear-transcribed mRNA catabolic process, nonsense-mediated decay / mRNA surveillance pathway / Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC)	GO:0000184	KEGG:03015	REAC:R-HSA-975957	GO:0016070;GO:0050789;GO:0009057	-
+324	R1	e019_R1	signal release from synapse / Synaptic vesicle cycle / Neurotransmitter release cycle	GO:0099643	KEGG:04721	REAC:R-HSA-112310	GO:0006836;GO:0065008;GO:0046903;GO:0050789	-
+325	R1	e019_R1	lymphocyte activation / Cell adhesion molecules	GO:0046649	KEGG:04514	NA	GO:0002376;GO:0008283;GO:0050789;GO:0006949;GO:0001775	-
+327	R1	e019_R1	signal peptide processing / Synthesis, secretion, and inactivation of Glucose-dependent Insulinotropic Polypeptide (GIP)	GO:0006465	NA	REAC:R-HSA-400511	GO:0006518;GO:0006508;GO:0051604	-
+328	R1	e019_R1	cellular response to leucine starvation	GO:1990253	NA	NA	GO:0050896;GO:0007154	-
+329	R1	e019_R1	glutaminyl-tRNAGln biosynthesis via transamidation / Aminoacyl-tRNA biosynthesis	GO:0070681	KEGG:00970	NA	GO:0016070;GO:0006520	-
+330	R1	e019_R1	barbed-end actin filament capping / Miscellaneous transport and binding events	GO:0051016	NA	REAC:R-HSA-5223345	GO:0065008;GO:0050789;GO:0051261	-
+332	R1	e019_R1	receptor guanylyl cyclase signaling pathway / Vascular smooth muscle contraction / Physiological factors	GO:0007168	KEGG:04270	REAC:R-HSA-5578768	GO:0050789;GO:0032501;GO:0050878;GO:0009117	-
+333	R1	e019_R1	branched-chain amino acid metabolic process / Valine, leucine and isoleucine degradation / Defective HLCS causes multiple carboxylase deficiency	GO:0009081	KEGG:00280	REAC:R-HSA-3371599	GO:0006520	-
+334	R1	e019_R1	melanosome assembly	GO:1903232	NA	NA	GO:0022607;GO:0048753	-
+335	R1	e019_R1	Carboxyterminal post-translational modifications of tubulin	NA	NA	REAC:R-HSA-8955332	GO:0036211	-
+336	R1	e019_R1	5-phosphoribose 1-diphosphate biosynthetic process / 5-Phosphoribose 1-diphosphate biosynthesis	GO:0006015	NA	REAC:R-HSA-73843	GO:0009117	-
+337	R1	e019_R1	NADH regeneration / Pentose phosphate pathway	GO:0006735	KEGG:00030	NA	GO:0006082;GO:0009117;GO:0005975;GO:0006091	-
+338	R1	e019_R1	regulation of systemic arterial blood pressure mediated by a chemical signal / Viral protein interaction with cytokine and cytokine receptor / Class A/1 (Rhodopsin-like receptors)	GO:0003044	KEGG:04061	REAC:R-HSA-373076	GO:0008015;GO:0065008;GO:0050789;GO:0050886	-
+339	R1	e019_R1	retrograde transport, endosome to Golgi / Retrograde transport at the Trans-Golgi-Network	GO:0042147	NA	REAC:R-HSA-6811440	GO:0051641;GO:0016192	-
+340	R1	e019_R1	proteasomal protein catabolic process / Protein processing in endoplasmic reticulum	GO:0010498	KEGG:04141	NA	GO:0050896;GO:0006508;GO:0009057	-
+342	R1	e019_R1	binding of sperm to zona pellucida / Interaction With Cumulus Cells And The Zona Pellucida	GO:0007339	NA	REAC:R-HSA-2534343	GO:0050789;GO:0008037	-
+343	R1	e019_R1	synaptonemal complex assembly / Meiotic synapsis	GO:0007130	NA	REAC:R-HSA-1221632	GO:0022607;GO:0000280;GO:0051276	-
+345	R1	e019_R1	GPI anchor biosynthetic process / Glycosylphosphatidylinositol (GPI)-anchor biosynthesis / Synthesis of glycosylphosphatidylinositol (GPI)	GO:0006506	KEGG:00563	REAC:R-HSA-162710	GO:0036211;GO:0044255;GO:0009059;GO:0006793	-
+346	R1	e019_R1	detection of chemical stimulus involved in sensory perception of sour taste	GO:0001581	NA	NA	GO:0051606	-
+347	R1	e019_R1	follicle-stimulating hormone signaling pathway / Glycoprotein hormones	GO:0042699	NA	REAC:R-HSA-209822	GO:0050789;GO:0048511	-
+348	R1	e019_R1	phospholipid transport / TP53 Regulates Transcription of Genes Involved in Cytochrome C Release	GO:0015914	NA	REAC:R-HSA-6803204	GO:0006869	-
+349	R1	e019_R1	Relaxin signaling pathway / Relaxin receptors	NA	KEGG:04926	REAC:R-HSA-444821	NA	-
+350	R1	e019_R1	thymocyte migration	GO:0072679	NA	NA	GO:0002376	-
+351	R1	e019_R1	Defective NEU1 causes sialidosis	NA	NA	REAC:R-HSA-4341670	NA	-
+352	R1	e019_R1	protein O-linked mannosylation / Mannose type O-glycan biosynthesis	GO:0035269	KEGG:00515	NA	GO:0036211	-
+353	R1	e019_R1	positive regulation of T cell chemotaxis / Viral protein interaction with cytokine and cytokine receptor / Chemokine receptors bind chemokines	GO:0010820	KEGG:04061	REAC:R-HSA-380108	GO:0050789	-
+354	R1	e019_R1	Glucagon signaling pathway / Glycogen breakdown (glycogenolysis)	NA	KEGG:04922	REAC:R-HSA-70221	GO:0005976;GO:0006112	-
+355	R1	e019_R1	fever generation / Regulation of TP53 Activity	GO:0001660	NA	REAC:R-HSA-5633007	GO:0050789;GO:0032501;GO:0050896	-
+356	R1	e019_R1	sulfation / Cytosolic sulfonation of small molecules	GO:0051923	NA	REAC:R-HSA-156584	GO:0006790	-
+357	R1	e019_R1	calcium import into the mitochondrion / Processing of SMDT1	GO:0036444	NA	REAC:R-HSA-8949664	GO:0006811	-
+358	R1	e019_R1	GTP biosynthetic process / Purine ribonucleoside monophosphate biosynthesis	GO:0006183	NA	REAC:R-HSA-73817	GO:0009117	-
+359	R1	e019_R1	cell-cell adhesion via plasma-membrane adhesion molecules	GO:0098742	NA	NA	GO:0007155	-
+360	R1	e019_R1	innate immune response in mucosa / Staphylococcus aureus infection / Alpha-defensins	GO:0002227	KEGG:05150	REAC:R-HSA-1462054	GO:0002376;GO:0031640;GO:0050789;GO:0050896	-
+361	R1	e019_R1	establishment of mitochondrion localization, microtubule-mediated / RHOT1 GTPase cycle	GO:0034643	NA	REAC:R-HSA-9013425	GO:0051640;GO:0051641;GO:0006810	-
+364	R1	e019_R1	detection of chemical stimulus involved in sensory perception of sweet taste / Class C/3 (Metabotropic glutamate/pheromone receptors)	GO:0001582	NA	REAC:R-HSA-420499	GO:0051606;GO:0050877	-
+366	R1	e019_R1	fatty acid beta-oxidation using acyl-CoA dehydrogenase	GO:0033539	NA	NA	GO:0006082;GO:0044255	-
+367	R1	e019_R1	protein ufmylation	GO:0071569	NA	NA	GO:0036211;GO:0050789;GO:0050896	-
+368	R1	e019_R1	negative regulation of 1-phosphatidylinositol-4-phosphate 5-kinase activity / Synthesis of PIPs in the nucleus	GO:0090217	NA	REAC:R-HSA-8847453	GO:0050789;GO:0044255;GO:0065009;GO:0006793	-
+370	R1	e019_R1	microtubule anchoring at centrosome	GO:0034454	NA	NA	GO:0006996	-
+371	R1	e019_R1	N-Glycan biosynthesis / Defective ALG14 causes ALG14-CMS	NA	KEGG:00510	REAC:R-HSA-5633231	GO:0044255	-
+372	R1	e019_R1	lactate metabolic process / Propanoate metabolism	GO:0006089	KEGG:00640	NA	NA	-
+373	R1	e019_R1	apelin receptor signaling pathway	GO:0060183	NA	NA	GO:0032502;GO:0050789	-
