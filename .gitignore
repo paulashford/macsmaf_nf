@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+# NextFlow
+macsr_nf/**/.nextflow/
+macsr_nf/**/**/work/
+
 # Distribution / packaging
 .Python
 build/
@@ -127,3 +131,23 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Nextflow specific
+macsr_nf/**/work/
+macsr_nf/**/.nextflow/
+macsr_nf/**/.nextflow.*
+macsr_nf/**/results/
+macsr_nf/**/.DS_Store
+macsr_nf/macsr_nf_dev/macsr_nf_dev/dev01.py
+macsr_nf/macsr_nf_dev/macsr_nf_dev/dev01.R
+macsr_nf/macsr_nf_dev/macsr_nf_dev/dev01.sh
+macsr_nf/**/temp*
+macsr_nf/**/*.tmp
+macsr_nf/**/output/
+macsr_nf/**/log*
+macsr_nf/macsr_nf_dev/README_TODO.txt
+MACSMAF_final_2024.code-workspace
+macsr_nf/macsr_nf_dev/cursor_macsr_nf_dev.code-workspace
+.DS_Store
+.gitignore
+modules/.DS_Store
