@@ -23,12 +23,12 @@ parse_module_file <- function( filename, split_cut_off_values = FALSE, module_pr
 		# Separate modules into 2 cols: net_mod, genes (using too_many = "merge" handles the genes together without trying to split them on tabs)
 		separate_wider_delim( cols = "modules", names = c("net_mod", "genes"), delim = "\t", too_few = "error", too_many = "merge" ) %>%
 		# separate the module info and the module number
-		separate_wider_delim( cols = "net_mod", names = c("network_label", "mod_number"), delim = "_", too_few = "error", too_many = "merge" )
+		separate_wider_delim( cols = "net_mod", names = c("network_label", "module_number"), delim = "_", too_few = "error", too_many = "merge" )
 		
 		# default cut-off set to 0.0 - ie assuming no filter applied
 		modules_tib <- modules_tib %>%
 			mutate( cut_off_value = '0.0' ) %>%
-			relocate( cut_off_value, .before = mod_number )
+			relocate( cut_off_value, .before = module_number )
 		# if we have a combined modules file with all cut-offs, split the cut-off from module info (greedy regexp ".*" here will split on last delim)	
 		if (split_cut_off_values == TRUE){
 			modules_tib <- modules_tib %>%
@@ -39,22 +39,21 @@ parse_module_file <- function( filename, split_cut_off_values = FALSE, module_pr
 		} else{
 			modules_tib <- modules_tib %>%
 				mutate( network_type = str_replace( network_label, fixed(".dat"), "" ) ) %>%
-				# mutate( network_type = network_label ) %>%
 				relocate( network_type, .before = network_label )
 		}
 		# Add string prefix to module number and reorder cols
 		# if no prefix, use the network_label
 		if (module_prefix != ""){
 			modules_tib <- modules_tib %>%
-				mutate( module = map_chr( mod_number, function(x) paste0(module_prefix, x) ) ) %>%
+				mutate( module = map_chr( module_number, function(x) paste0(module_prefix, x) ) ) %>%
 				relocate(module, .before = genes)
 		} else {
 			modules_tib <- modules_tib %>%
-				mutate( module = paste0(network_label, '-', mod_number) ) %>%
+				mutate( module = paste0(network_label, '-', module_number) ) %>%
 				mutate( module = str_replace( module, fixed(".dat"), "-module" ) ) %>%
 				mutate( module = str_replace( module, fixed("network-modules-"), "" ) ) %>%
 				relocate(module, .before = genes)
-			# modules_tib <- mutate( modules_tib, module = mod_number )
+			# modules_tib <- mutate( modules_tib, module = module_number )
 		}
 
 		# modules_tib <- modules_tib %>%

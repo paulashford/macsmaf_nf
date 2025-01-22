@@ -15,6 +15,7 @@ include { PASCAL_GWAS } from '../subworkflows/pascal_gwas'
 include { CONVERT_IDS } from '../subworkflows/id_conversion'
 include { GO_SLIM } from '../subworkflows/go_slim'
 include { MOD_FUNC_ENRICH } from '../subworkflows/mod_func_enrich'
+include { RANK_ANNOT } from '../subworkflows/rank_annot'
 
 // Add validation functions
 def validateModFuncEnrichInputs(net_methods, net_dbs, net_cutoffs, modules_dir, file_prefix) {
@@ -113,32 +114,26 @@ workflow {
         params.net_file_prefix
     )
 
-    // Validate gprofiler parameters
-    validateGprofilerParams(
-        params.gprofiler_sources,
-        params.gprofiler_sig,
-        params.gprofiler_exclude_iea
-    )
-
-    // Validate output paths
-    validateOutputPaths(params.nf_enrichment_dir)   
-
     // Create channels from the parameters
     ch_network_databases = Channel.fromList(params.net_dbs ?: [])
+                                .ifEmpty { error "No network types specified in params.net_dbs" }
     ch_analysis_methods = Channel.fromList(params.net_methods ?: [])
+                                .ifEmpty { error "No network methods specified in params.net_methods" }
     ch_network_cutoffs = Channel.fromList(params.net_cutoffs ?: [])
-
-    // Check if channels are empty
-    ch_network_databases.ifEmpty { error "No network types specified in params.net_dbs" }
-    ch_analysis_methods.ifEmpty { error "No network methods specified in params.net_methods" }
-    ch_network_cutoffs.ifEmpty { error "No cutoff values specified in params.net_cutoffs" }
+                                .ifEmpty { error "No cutoff values specified in params.net_cutoffs" }
 
     // Create databases and methods pairs
     ch_net_dbs_methods = ch_network_databases
         .combine(ch_analysis_methods)
         .map { db, method -> [ method, db ] }
 
-    // Execute process with validated inputs
+    // Validate gprofiler parameters and run functional enrichment
+    validateGprofilerParams(
+        params.gprofiler_sources,
+        params.gprofiler_sig,
+        params.gprofiler_exclude_iea
+    )
+
     MOD_FUNC_ENRICH(
         ch_net_dbs_methods,
         ch_network_cutoffs,
@@ -149,11 +144,47 @@ workflow {
         params.gprofiler_exclude_iea
     )
 
-    // Add GO_SLIM workflow call using MOD_FUNC_ENRICH output
+    // Add GO_SLIM workflow using MOD_FUNC_ENRICH output
     GO_SLIM(
-        MOD_FUNC_ENRICH.out.enrichment_results,
-        params.go_slim_min_perc_rank ?: 0.25  // Default to 0.25 if not specified
+        MOD_FUNC_ENRICH.out.processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
+        params.go_slim_min_perc_rank ?: 0.25
     )
+
+    // Add RANK_ANNOT workflow
+    RANK_ANNOT(
+        MOD_FUNC_ENRICH.out.processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
+        GO_SLIM.out.mapped_slim_results,           // tuple(method, db, cutoff, file) after mapping to slim
+        MOD_FUNC_ENRICH.out.modules,               // tuple(method, db, cutoff, file) containing gene lists
+        params.max_term_size ?: 0.05
+    )
+
+    // Debug output
+    MOD_FUNC_ENRICH.out.processed_enrichment
+        .view { method, db, cutoff, file -> 
+            "DEBUG: Processed enrichment results:\n" +
+            "  Method: ${method}\n" +
+            "  Database: ${db}\n" +
+            "  Cutoff: ${cutoff}\n" +
+            "  File: ${file}"
+        }
+
+    GO_SLIM.out.go_slim_results
+        .view { method, db, cutoff, file -> 
+            "DEBUG: GO Slim results:\n" +
+            "  Method: ${method}\n" +
+            "  Database: ${db}\n" +
+            "  Cutoff: ${cutoff}\n" +
+            "  File: ${file}"
+        }
+    
+    RANK_ANNOT.out.ranked_results
+        .view { method, db, cutoff, file -> 
+            "DEBUG: Ranked and annotated results:\n" +
+            "  Method: ${method}\n" +
+            "  Database: ${db}\n" +
+            "  Cutoff: ${cutoff}\n" +
+            "  File: ${file}"
+        }
 
     // Output for checking and validation
     MOD_FUNC_ENRICH.out.modules
@@ -162,9 +193,9 @@ workflow {
             "  File: ${file}"
         }
 
-    MOD_FUNC_ENRICH.out.enrichment_results
+    MOD_FUNC_ENRICH.out.processed_enrichment
         .view { file -> 
-            "DEBUG: Enrichment results:\n" +
+            "DEBUG: Processed enrichment results:\n" +
             "  File: ${file}"
         }
 }

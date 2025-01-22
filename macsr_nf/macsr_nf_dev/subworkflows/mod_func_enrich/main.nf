@@ -1,7 +1,5 @@
 // subworkflow for g:Profiler functional enrichment
 nextflow.enable.dsl=2
-
-
 workflow MOD_FUNC_ENRICH {
 	take:
 		ch_net_dbs_methods
@@ -172,13 +170,14 @@ process post_process_gprofiler_enrichment {
 
 process add_tp_tn_fp_fn_mcc {
 	debug true
-	publishDir "${params.nf_out_dir}/enrichment", mode: 'copy'
+	publishDir "${params.nf_enrichment_dir}", mode: 'copy'
 
 	input:
 		tuple val(method), val(db), val(cutoff), path(processed_enrichment)
 
 	output:
 		tuple val(method), val(db), val(cutoff), path("${out_prefix}_enrichment_with_metrics.rds"), emit: processed_results
+		tuple val(method), val(db), val(cutoff), path("${out_prefix}_enrichment_with_metrics.tsv"), emit: enrichment_results
 
 	script:
 	out_prefix = "${method}_${db}_${cutoff}"
@@ -187,11 +186,13 @@ process add_tp_tn_fp_fn_mcc {
 	if [ ! -s ${processed_enrichment} ]; then
 		echo "WARNING: Empty processed enrichment file - skipping metrics calculation"
 		touch ${out_prefix}_enrichment_with_metrics.rds
+		touch ${out_prefix}_enrichment_with_metrics.tsv
 		exit 0
 	fi
-
-	Rscript ${params.root_proj_dir}/subworkflows/mod_func_enrich/add_metrics.r \\
-		${processed_enrichment} \\
-		${out_prefix}_enrichment_with_metrics.rds
+	
+	Rscript ${params.root_proj_dir}/subworkflows/mod_func_enrich/add_metrics.r \
+		${processed_enrichment} \
+		"${out_prefix}_enrichment_with_metrics.rds" \
+		"${out_prefix}_enrichment_with_metrics.tsv"
 	"""
 }

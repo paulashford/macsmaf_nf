@@ -6,10 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-# NextFlow
-macsr_nf/**/.nextflow/
-macsr_nf/**/**/work/
-
 # Distribution / packaging
 .Python
 build/
@@ -146,8 +142,13 @@ macsr_nf/**/*.tmp
 macsr_nf/**/output/
 macsr_nf/**/log*
 macsr_nf/macsr_nf_dev/README_TODO.txt
+macsr_nf/**/arc/
+macsr_nf/**/dev/
 MACSMAF_final_2024.code-workspace
 macsr_nf/macsr_nf_dev/cursor_macsr_nf_dev.code-workspace
 .DS_Store
 .gitignore
 modules/.DS_Store
+macsr_nf/macsr_nf_dev/subworkflows/mod_func_enrich/test_out1.tmp.tsv
+macsr_nf/macsr_nf_dev/subworkflows/pascal_gwas/testin.tmps
+macsr_nf/macsr_nf_dev/scratch/scratch_pascal1.sh

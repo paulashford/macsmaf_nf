@@ -16,7 +16,7 @@ option_list <- list(
 
 opt <- parse_args(OptionParser(option_list=option_list))
 
-# Main function remains the same
+# Get top ranked GO:BP terms for each module (these wil be SLIMed)
 get_top_go_terms_by_module <- function(gpr, min_perc_rank=0.25) {
     go_bp_mod <- gpr %>%
         ungroup() %>%

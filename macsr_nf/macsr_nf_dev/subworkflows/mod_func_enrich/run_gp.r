@@ -50,7 +50,7 @@ if (is.na(script_dir)) {
 }
 
 # Source functions file
-source(file.path(script_dir, 'gprofiler_enrichment_functions.r'))
+source(file.path(script_dir, 'subworkflows', 'mod_func_enrich', 'gprofiler_enrichment_functions.r'))
 
 # Load and process module data
 if (file.exists(pre_proc_mod_file)) {

@@ -34,7 +34,7 @@ if (is.na(script_dir)) {
 }
 
 # Source functions file
-source(file.path(script_dir, 'gprofiler_enrichment_functions.r'))
+source(file.path(script_dir, 'subworkflows', 'mod_func_enrich', 'gprofiler_enrichment_functions.r'))
 
 # Load results
 if (file.exists(gprofiler_results_file)) {
