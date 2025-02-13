@@ -4,6 +4,12 @@ macsr_nf/macsr_nf_dev/README.txt
 This is just a simple development folder for nextflow pipeline modules for MACSMAF 
 CSR networks / modules / functions /annotations etc
 
+Output files produced by the pipeline for each method, db and cutoff:
+	(KMR)1_(cpdb,humanbase,string)_0.n.tsv
+		*_ranked_annotated.tsv : All signif. enrichment terms per module with GO_slim, classifcation metrics, MCC and pval_rank - which ranks p_values *per module* (ignoring source)
+		*_rank_agg_final.tsv : Just the top ranked terms per module *and* source based on p_val ranks (row_rank_p) and mcc ranks (row_rank_mcc). There will be a row for each db with signif. enrichment, so up to 3 rows per module.
+		*_topk_aggregated.tsv : Not sure I've sent this before - it's just the stats i.e. p_val and mcc, their ranks and the rank1 terms - might be useful for your stats Yonathan?
+
 
 PYTHON SETUP
 cd /Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev

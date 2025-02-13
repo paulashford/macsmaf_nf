@@ -1,7 +1,11 @@
 // Subworkflow for GOSlim analysis of top 25% ranked GO terms for each modules gene set
+// 01 2025 p.ashford@ucl.ac.uk
+// https://github.com/paulashford/macsmaf_nf
+
 nextflow.enable.dsl=2
 
 process RUN_GO_SLIM {
+    debug { params.debug }
     publishDir "${params.nf_enrichment_dir}/go_slim", mode: 'copy'
 
     input:
@@ -13,6 +17,14 @@ process RUN_GO_SLIM {
 
     script:
     """
+    # First check if input file is empty
+    if [ ! -s ${enrichment_results_rds} ]; then
+        echo "WARNING: (go_slim/RUN_GO_SLIM) Empty enrichment results file - skipping GO slim analysis for ${method} ${db} ${cutoff}"
+        touch "go_slim_results_${method}_${db}_${cutoff}.txt"
+        exit 0
+    fi
+
+    export DEBUG=${params.debug}
     Rscript ${params.root_proj_dir}/subworkflows/go_slim/go_slim.r \\
         --input '${enrichment_results_rds}' \\
         --min_perc_rank '${min_perc_rank}' \\
@@ -21,6 +33,7 @@ process RUN_GO_SLIM {
 }
 
 process MAP_TO_SLIM {
+    debug { params.debug }
     publishDir "${params.nf_enrichment_dir}/go_slim", mode: 'copy'
 
     input:
@@ -41,6 +54,7 @@ process MAP_TO_SLIM {
 }
 
 process clean_slim_results {
+    debug { params.debug }
     publishDir "${params.nf_enrichment_dir}/go_slim", mode: 'copy'
 
     input:
@@ -64,17 +78,28 @@ workflow GO_SLIM {
     min_perc_rank
 
     main:
+    if (params.debug) {
+        log.info "DEBUG: Starting GO_SLIM workflow"
+        log.info "DEBUG: Input enrichment_results: $enrichment_results"
+        log.info "DEBUG: Input min_perc_rank: $min_perc_rank"
+    }
+
     RUN_GO_SLIM(enrichment_results, min_perc_rank)
     
+    // Only proceed with mapping if the GO slim results file has content
+    RUN_GO_SLIM.out.go_slim_results
+        .filter { _method, _db, _cutoff, file -> file.size() > 0 }
+        .set { valid_go_slim_results }
+
     MAP_TO_SLIM(
-        RUN_GO_SLIM.out.go_slim_results,
+        valid_go_slim_results,  // [method, db, cutoff, file]
         params.go_obo_path,
         params.go_slim_obo_path
     )
 
-    clean_slim_results(MAP_TO_SLIM.out.mapped_slim_results)
+    clean_slim_results(MAP_TO_SLIM.out.mapped_slim_results)  // [method, db, cutoff, file]
 
     emit:
-    go_slim_results = RUN_GO_SLIM.out.go_slim_results
-    mapped_slim_results = clean_slim_results.out.cleaned_results
+    go_slim_results = RUN_GO_SLIM.out.go_slim_results       // [method, db, cutoff, file]
+    mapped_slim_results = clean_slim_results.out.cleaned_results  // [method, db, cutoff, file]
 }

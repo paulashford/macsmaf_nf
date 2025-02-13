@@ -12,14 +12,18 @@ library(tidyverse)
 library(data.table)
 library(optparse)
 
-# Get script directory using Nextflow's environment variable
-script_dir <- Sys.getenv("NXF_SCRIPT_DIR", unset = NA)
-if (is.na(script_dir)) {
-    stop("NXF_SCRIPT_DIR environment variable not set")
+# Get root directory using Nextflow's environment variable
+root_dir <- Sys.getenv("NXF_FILE_ROOT", unset = NA)
+if (is.na(root_dir)) {
+    stop("NXF_FILE_ROOT environment variable not set")
 }
 
-# Source functions file
-source(file.path(script_dir, 'subworkflows', 'rank_annot', 'stats_functions.R'))
+# Source stats functions(which local to rank_annot/, not mod_func_enrich/)
+source(file.path(root_dir, 'subworkflows', 'rank_annot', 'stats_functions.R'))
+
+# Get debug setting from environment variable
+debug <- Sys.getenv("DEBUG", unset = "false")
+debug <- tolower(debug) == "true"
 
 # Filter out very general terms and rank enrichment results
 filter_cut_off_rank_enrichment <- function(enrichment_results, max_term_size = 0.05, perc_rank_cutoff = 0.25) {
@@ -112,7 +116,7 @@ option_list <- list(
 	make_option("--perc_rank_cutoff", type="numeric", default=0.25, help="Percentile rank cutoff [default=0.25]"),
 	make_option("--agg_type", type="character", default="MC3", help="TopKLists aggregation type [default=MC3]"),
 	make_option("--sources", type="character", default="GO:BP,KEGG,REAC", 
-			   help="Comma-separated list of sources to aggregate [default=GO:BP,KEGG,REAC]")
+				help="Comma-separated list of sources to aggregate [default=GO:BP,KEGG,REAC]")
 )
 
 opt <- parse_args(OptionParser(option_list=option_list))
@@ -123,10 +127,12 @@ main <- function() {
 	goslim_results <- read_tsv(opt$goslim_file)
 	modules_data <- readRDS(opt$modules_file)
 	
-	# Print column names for debugging (will show in Nextflow log)
-	cat("DEBUG: Enrichment results columns:", paste(colnames(enrichment_results), collapse=", "), "\n")
-	cat("DEBUG: GO slim results columns:", paste(colnames(goslim_results), collapse=", "), "\n")
-	cat("DEBUG: Modules data columns:", paste(colnames(modules_data), collapse=", "), "\n")
+	# Print column names for debugging
+	if(debug) {
+		cat("DEBUG: Enrichment results columns:", paste(colnames(enrichment_results), collapse=", "), "\n")
+		cat("DEBUG: GO slim results columns:", paste(colnames(goslim_results), collapse=", "), "\n")
+		cat("DEBUG: Modules data columns:", paste(colnames(modules_data), collapse=", "), "\n")
+	}
 	
 	# Extract cutoff from enrichment results
 	cutoff <- unique(enrichment_results$network_cutoff)
@@ -191,26 +197,26 @@ main <- function() {
 											)
 							)
 
-	# Write results
-	cat("INFO: Writing results to", opt$output_file, "\n")
+	# Write results with debug info
+	if(debug) cat("DEBUG: Writing ranked results to", opt$output_file, "\n")
 	write_tsv(ranked_results, opt$output_file)
 	
 	# Write aggregated results - use consistent naming pattern for Nextflow
 	agg_output <- sub("_ranked_annotated.tsv$", "_topk_aggregated.tsv", opt$output_file)
-	cat("INFO: Writing aggregated results to", agg_output, "\n")
+	if(debug) cat("DEBUG: Writing aggregated results to", agg_output, "\n")
 	write_tsv(aggregated_results, agg_output)
 	
 	# Write rank1 results
 	rank1_output <- sub("_ranked_annotated.tsv$", "_rank1_aggregated.tsv", opt$output_file)
-	cat("INFO: Writing rank1 results to", rank1_output, "\n")
+	if(debug) cat("DEBUG: Writing rank1 results to", rank1_output, "\n")
 	write_tsv(aggregated_results_rank1, rank1_output)
 	
 	# Write final aggregated results
 	final_output <- sub("_ranked_annotated.tsv$", "_rank_agg_final.tsv", opt$output_file)
-	cat("INFO: Writing final aggregated results to", final_output, "\n")
+	if(debug) cat("DEBUG: Writing final aggregated results to", final_output, "\n")
 	write_tsv(rank_agg_final, final_output)
 	
-	cat("INFO: Rank annotation process completed\n")
+	if(debug) cat("DEBUG: Rank annotation process completed\n")
 }
 
 # Run main function with error handling

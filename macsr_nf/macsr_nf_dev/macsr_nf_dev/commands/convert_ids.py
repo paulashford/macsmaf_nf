@@ -21,6 +21,17 @@ DEFAULT_CHUNK_SIZE = 1000000
 
 LOG = logging.getLogger()
 
+# Custom type to convert space-delimited string to a list
+class ListParamType(click.ParamType):
+    name = 'list'
+
+    def convert(self, value, param, ctx):
+        # Split the string by spaces and return as a list
+        return value.split()
+
+# Create an instance of the custom type
+LIST = ListParamType()
+
 @click.command()
 # @click.option(
 #     "--hgnc_map_file",
@@ -44,9 +55,9 @@ LOG = logging.getLogger()
 )
 @click.option(
     "--ids_to_convert",
-    type=click.STRING,
+    type=LIST,
     required=True,
-    help=f"Input: specify IDs to convert as a comma list of IDs to convert; all IDs should be of format --it_type.",
+    help=f"Input: specify IDs to convert as space separated list; all IDs should be of format --it_type.",
 )
 #TODO Valid id_type types should depend on MAPPING_FILE_TYPES - here just allow any selection from union of all map types.
 @click.option(
@@ -95,16 +106,10 @@ def convert_ids_with_mapfile(map_file, map_file_type, ids_to_convert, id_type, a
         f"col_filter {col_filter} "
         f"outfile {outfile} "
     )
-    # click.echo("map_file, type: {}  value: {}".format(type(map_file), map_file))
-    # click.echo("map_file_type, type: {}  value: {}".format(type(map_file_type), map_file_type))
-    # click.echo("ids_to_convert, type: {}  value: {}".format(type(ids_to_convert), ids_to_convert))
-    # click.echo("id_type, type: {}  value: {}".format(type(id_type), id_type))
-    # click.echo("approved_only, type: {}  value: {}".format(type(approved_only), approved_only))
-    # click.echo("col_filter, type: {}  value: {}".format(type(col_filter), col_filter))
-    # click.echo("outfile, type: {}  value: {}".format(type(outfile), outfile))
     
-    # convert ids to list
-    id_list = re.sub(r"\s+", "", ids_to_convert, flags=re.UNICODE).split(sep=',')
+    # convert ids to list - this is now handled via custom Click type LIST
+    # id_list = re.sub(r"\s+", "", ids_to_convert, flags=re.UNICODE).split(sep=',')
+    id_list =  ids_to_convert
 
     # map ids with HGNC file
     df_map = conv_ids(map_file, map_file_type, id_list, id_type, approved_only, col_filter)

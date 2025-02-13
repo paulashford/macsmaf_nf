@@ -1,12 +1,12 @@
 #!/usr/bin/env nextflow
+// 01 2025 p.ashford@ucl.ac.uk
+// https://github.com/paulashford/macsmaf_nf
 
 process RANK_ANNOTATE {
     publishDir "${params.nf_enrichment_dir}/rank_annotated", mode: 'copy'
     
     input:
-    tuple val(method), val(db), val(cutoff), path(enrichment_file)
-    tuple val(method2), val(db2), val(cutoff2), path(goslim_file)
-    tuple val(method3), val(db3), val(cutoff3), path(modules_file)
+    tuple val(method), val(db), val(cutoff), path(enrichment_file), path(goslim_file), path(modules_file)
     val(max_term_size)
 
     output:
@@ -16,11 +16,6 @@ process RANK_ANNOTATE {
     tuple val(method), val(db), val(cutoff), path("*_rank_agg_final.tsv"), emit: final_results
     
     script:
-    // Verify tuples match
-    if (method != method2 || db != db2 || cutoff != cutoff2 ||
-        method != method3 || db != db3 || cutoff != cutoff3) {
-        error "Mismatched inputs: ${method}_${db}_${cutoff} vs ${method2}_${db2}_${cutoff2} vs ${method3}_${db3}_${cutoff3}"
-    }
     """
     Rscript ${params.root_proj_dir}/subworkflows/rank_annot/rank_annot.r \
         --enrichment_file ${enrichment_file} \
@@ -34,16 +29,35 @@ process RANK_ANNOTATE {
 
 workflow RANK_ANNOT {
     take:
-    enrichment_results  // tuple(method, db, cutoff, file) with metrics
-    goslim_results      // tuple(method, db, cutoff, file) after mapping to slim
-    modules_results     // tuple(method, db, cutoff, file) with gene lists
-    max_term_size      // value
+    enrichment_results  // tuple(method, db, cutoff, file)
+    goslim_results      // tuple(method, db, cutoff, file)
+    modules_results     // tuple(method, db, cutoff, file)
+    max_term_size      
 
     main:
+    // Join channels by method, db, and cutoff, allowing for missing combinations
+    combined_inputs = enrichment_results
+        .join(goslim_results, by: [0,1,2], failOnMismatch: false)  // join by method, db, cutoff
+        .join(modules_results, by: [0,1,2], failOnMismatch: false)  // join by method, db, cutoff
+        .filter { it.every { elem -> elem != null } }  // Remove any combinations with null values
+        .map { method, db, cutoff, enrich_file, goslim_file, modules_file ->
+            if (params.debug) {
+                log.info """
+                    DEBUG: Processing combination:
+                    Method: ${method}
+                    DB: ${db}
+                    Cutoff: ${cutoff}
+                    Enrichment file: ${enrich_file}
+                    GO Slim file: ${goslim_file}
+                    Modules file: ${modules_file}
+                """
+            }
+            tuple(method, db, cutoff, enrich_file, goslim_file, modules_file)
+        }
+
+    // Run RANK_ANNOTATE only with valid combinations
     RANK_ANNOTATE(
-        enrichment_results,
-        goslim_results,
-        modules_results,
+        combined_inputs,
         max_term_size
     )
 

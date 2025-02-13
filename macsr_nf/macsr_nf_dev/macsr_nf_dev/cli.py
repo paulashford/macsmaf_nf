@@ -5,13 +5,16 @@
 import logging
 import click
 from macsr_nf_dev.settings import get_default_settings
-from macsr_nf_dev.commands import convert_ids
+from macsr_nf_dev.commands.convert_ids import convert_ids_with_mapfile
+from macsr_nf_dev.commands.utils import dict_lookup
+import os
 
+os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
     # level=logging.INFO, 
     level=logging.DEBUG, 
     format="%(asctime)s | %(levelname)s | %(message)s",
-    filename='/Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev/output/logging/log1.txt',
+    filename='logs/cli_log.txt',
     filemode='w'
     # logging.basicConfig(filename='/path/to/file.log', filemode='w', level=logging.DEBUG) 
 )
@@ -43,5 +46,5 @@ def dump_config():
         cli.echo(f"{key:25s} {val}")
 
 cli.add_command(dump_config)
-cli.add_command(convert_ids.convert_ids_with_mapfile)
-
+cli.add_command(convert_ids_with_mapfile)
+cli.add_command(dict_lookup, name='dict-lookup')

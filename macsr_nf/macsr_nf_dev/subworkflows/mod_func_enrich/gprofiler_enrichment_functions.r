@@ -1,5 +1,8 @@
 #!/usr/bin/env Rscript
 # gprofiler_enrichment_functions.r
+# 01 2025 p.ashford@ucl.ac.uk
+# https://github.com/paulashford/macsmaf_nf
+
 # Programmatic use of g:Profiler parsing / enrichment functions
 # based on: experiments/e019/gprofiler-multi/gprofiler_functions.R
 # 24 05 2023
@@ -21,9 +24,9 @@ parse_module_file <- function( filename, split_cut_off_values = FALSE, module_pr
 	# example row in col 'modules': 	 "network-modules-K1-humanbase-0.2.dat_188\tZCCHC10\tSTAC3"
 	modules_tib <- modules_tib %>%
 		# Separate modules into 2 cols: net_mod, genes (using too_many = "merge" handles the genes together without trying to split them on tabs)
-		separate_wider_delim( cols = "modules", names = c("net_mod", "genes"), delim = "\t", too_few = "error", too_many = "merge" ) %>%
+		separate_wider_delim( cols = "modules", names = c("net_mod", "genes"), delim = "\t", too_few = "debug", too_many = "merge" ) %>%
 		# separate the module info and the module number
-		separate_wider_delim( cols = "net_mod", names = c("network_label", "module_number"), delim = "_", too_few = "error", too_many = "merge" )
+		separate_wider_delim( cols = "net_mod", names = c("network_label", "module_number"), delim = "_", too_few = "debug", too_many = "merge" )
 		
 		# default cut-off set to 0.0 - ie assuming no filter applied
 		modules_tib <- modules_tib %>%
@@ -83,8 +86,25 @@ parse_module_file <- function( filename, split_cut_off_values = FALSE, module_pr
 	# returns tibble - for g:Profiler-suitable named list 
 	# pass tibble to convert_module_tibble_to_gp_query(...)
 	return( select(modlist, -genes) )
-	
 
+}
+
+filter_modules_by_cutoff <- function(tib_modules, cutoff) {
+	library(dplyr)
+	tib_modules$cut_off_value <- as.numeric(tib_modules$cut_off_value)	
+	
+	# Convert cutoff to numeric if it's a string
+	if (is.character(cutoff)) {
+		numeric_cutoff <- as.numeric(cutoff)	
+	} else {
+		numeric_cutoff <- as.numeric(cutoff)
+	}
+
+	# Filter modules by cutoff
+	tib_modules <- tib_modules %>%
+		filter(cut_off_value == numeric_cutoff)
+
+	return(tib_modules)
 }
 
 # Convert output from parse_module_file(...) from 
@@ -93,9 +113,15 @@ parse_module_file <- function( filename, split_cut_off_values = FALSE, module_pr
 convert_module_tibble_to_gp_query <- function(tib_modules, filter_cut_off = 'none', label_cols = c("network_type", "module"), gene_list = "genelist") {
 	library(dplyr)
 	
+	# Get debug setting from environment variable
+	debug <- Sys.getenv("DEBUG", unset = "false")
+	debug <- tolower(debug) == "true"
+	
 	# Add debug output for input values
-	print(paste("DEBUG: Input cutoff type:", typeof(filter_cut_off)))
-	print(paste("DEBUG: Available cutoffs in data:", paste(unique(tib_modules$cut_off_value), collapse=", ")))
+	if(debug) {
+		print(paste("DEBUG: Input cutoff type:", typeof(filter_cut_off)))
+		print(paste("DEBUG: Available cutoffs in data:", paste(unique(tib_modules$cut_off_value), collapse=", ")))
+	}
 	
 	# Filter the data if a cutoff is specified
 	if (filter_cut_off != 'none') {
@@ -111,7 +137,7 @@ convert_module_tibble_to_gp_query <- function(tib_modules, filter_cut_off = 'non
 			filter(as.numeric(cut_off_value) == numeric_cutoff)
 		
 		# Debug output after filtering
-		print(paste("DEBUG: Rows after filtering:", nrow(tib_modules)))
+		if(debug) print(paste("DEBUG: Rows after filtering:", nrow(tib_modules)))
 		
 		# Return empty list if no matches found
 		if (nrow(tib_modules) == 0) {
@@ -124,7 +150,7 @@ convert_module_tibble_to_gp_query <- function(tib_modules, filter_cut_off = 'non
 	result <- setNames(tib_modules$genelist, tib_modules$module)
 	
 	# Debug output for result
-	print(paste("DEBUG: Number of modules in result:", length(result)))
+	if(debug) print(paste("DEBUG: Number of modules in result:", length(result)))
 	
 	return(result)
 }
@@ -136,6 +162,9 @@ b <- function(df, cols){
 # gprofiler gost wrapper includes boilerplate params for our purposes
 # Note multi_query = TRUE, doesn"t quite do what expected as it will summarise all modules into top terms [see https://cran.r-project.org/web/packages/gprofiler2/vignettes/gprofiler2.html]
 # 	whereas we want enriched terms grouped by modules - provided pass named list of modules into query this is what is done in this wrapper
+# g:Profiler API base URL
+# 	PRODUCTION SERVER: api_base_url='https://biit.cs.ut.ee/gprofiler'
+# 	BETA SERVER: api_base_url='https://biit.cs.ut.ee/gprofiler_beta'
 run_gprofiler_enrichment <- function(query, 
 										sig_level=0.01, 
 										sources=c( "GO:MF","GO:CC","GO:BP","KEGG","REAC","HPA","CORUM","HP","WP" ),
@@ -143,11 +172,14 @@ run_gprofiler_enrichment <- function(query,
 										multq=FALSE,
 										batch_size=50,  # New parameter for batch processing
 										max_retries=3,   # New parameter for retries
-										api_base_url='https://biit.cs.ut.ee/gprofiler_beta'
-										# set_base_url='https://biit.cs.ut.ee/gprofiler'
+										api_base_url='https://biit.cs.ut.ee/gprofiler'
 										){
 	require(gprofiler2)
 	require(dplyr)
+	
+	# Get debug setting from environment variable
+	debug <- Sys.getenv("DEBUG", unset = "FALSE")
+	debug <- tolower(debug) == "true"
 	
 	# g:Profiler API base URL
 	nxf_api_base_url <- Sys.getenv("NXF_GPROFILER_API_URL", unset = NA)
@@ -155,10 +187,10 @@ run_gprofiler_enrichment <- function(query,
 		api_base_url <- nxf_api_base_url
 	}
 
-	print(paste0("Config g:profiler URL ", api_base_url))
+	if(debug) print(paste0("DEBUG: Config g:profiler URL ", api_base_url))
 	set_base_url(api_base_url)	
 
-	print(paste0("Running g:profiler for ", length(query), " modules..."))
+	if(debug) print(paste0("DEBUG: Running g:profiler for ", length(query), " modules..."))
 	
 	# Split query into batches
 	query_names <- names(query)
@@ -170,7 +202,7 @@ run_gprofiler_enrichment <- function(query,
 		end_idx <- min(i * batch_size, length(query))
 		batch_query <- query[start_idx:end_idx]
 		
-		print(paste0("Processing batch ", i, " of ", total_batches, 
+		if(debug) print(paste0("DEBUG: Processing batch ", i, " of ", total_batches, 
 					" (modules ", start_idx, " to ", end_idx, ")"))
 		
 		# Retry logic
@@ -200,7 +232,7 @@ run_gprofiler_enrichment <- function(query,
 				}
 			}, error = function(e) {
 				if(retry < max_retries) {
-					warning(paste0("Attempt ", retry, " failed. Retrying... Error: ", e$message))
+					if(debug) warning(paste0("DEBUG: Attempt ", retry, " failed. Retrying... Error: ", e$message))
 					Sys.sleep(5)  # Wait 5 seconds before retrying
 				} else {
 					stop(paste0("All retry attempts failed for batch ", i, ". Error: ", e$message))
@@ -227,41 +259,92 @@ run_gprofiler_enrichment <- function(query,
 	return(combined_result)
 }
 
-# Some post-processing of gprofiler results data.frame (gp_enrich$result) columns & filtering
-# max_term: maximum GO term size for those that are very generic as fraction of effective domain size
-# Previously (see e017/proccess_gprofiler.R) using web-version multi-module-run, resultant file was very wide and needed pivoting appropriately
-# Programmatic runs of gp return a long-form (sane) table which just needs module number/experiment splitting out 
-# Here is format used in e017:
-#  head -n 2 long_form_v2_gProfiler_hsapiens_M1_09-02-2023_15-17-59__multiquery_simple_HDR.csv_M1.csv
-# "","source","term_name","term_id","term_size","effective_domain_size","experiment_info","func_module_number","adjusted_p_value","query_size","intersection_size"
-# "1","GO:MF","NADH dehydrogenase (ubiquinone) activity","GO:0008137",41,61806,"e017_M1",9,2.09101860194375e-130,59,41
-# 
-post_process_gprofiler_enrichment <- function( gpresults, max_term = 0.05 ){
-	require(tidyr)
-	require(dplyr)
+# Create empty result with correct structure
+create_empty_result <- function() {
+    tibble(
+        source = character(),
+        term_name = character(),
+        term_id = character(),
+        p_value = numeric(),
+        term_size = integer(),
+        query_size = integer(),
+        intersection_size = integer(),
+        precision = numeric(),
+        recall = numeric(),
+        effective_domain_size = integer(),
+        source_order = integer(),
+        parents = character(),
+        experiment_info = character(),
+        func_module_number = integer(),
+        perc_rank = numeric(),
+        cumelative_dist = numeric()
+    )
+}
 
-	gpr <- gpresults %>%
-		# column naming
-		rename( experiment_info = query ) %>%
-		# Split on last underscore to get module number
-		separate_wider_regex( experiment_info, c( experiment_info = ".*", "_", func_module_number = "\\d+" ), cols_remove = TRUE )
-		
-	
-	# Max term size grouped by source (GO:BP, REAC etc)
-	gpr <- gpr %>%
-		group_by(source) %>%
-		filter( term_size < (max_term * effective_domain_size) ) %>%
-		# sort
-		arrange(func_module_number, p_value)	
-	
-	# add rankings
-	gpr <- gpr %>%
-	   group_by(source, func_module_number) %>%
-    	mutate( perc_rank = percent_rank(p_value) ) %>%
-    	mutate( cumelative_dist = cume_dist(p_value) )
+# Post-process gprofiler results data.frame (gp_enrich$result) columns, plus filtering
+# 	max_term: maximum GO:BP (or other source) term size, to filter out very generic terms assessed as total fraction of effective domain size
+# 	gpresults: output from g:Profiler R API, which returns a long-form table, which just needs module number/experiment splitting out.
+# 		(Previously (see e017/proccess_gprofiler.R) used output from web-version/multi-module-run; resultant file was very wide and needed pivoting appropriately.)
+post_process_gprofiler_enrichment <- function(gpresults, max_term = 0.05, debug = FALSE) {
+    require(tidyr)
+    require(dplyr)
 
-	return(gpr)
+    # Input validation
+    if (is.null(gpresults)) {
+        if(debug) warning("Input gpresults is NULL - returning empty result")
+        return(create_empty_result())
+    }
 
+    if (length(gpresults) == 0 || nrow(gpresults) == 0) {
+        if(debug) warning("Empty gpresults - returning empty result")
+        return(create_empty_result())
+    }
+
+    # Debug input structure
+    if(debug) {
+        cat("DEBUG: Input structure:\n")
+        str(head(gpresults))
+    }
+
+    tryCatch({
+        gpr <- gpresults %>%
+            # column naming
+            rename(experiment_info = query) %>%
+            # Split on last underscore to get module number
+            separate_wider_regex(experiment_info, 
+                            c(experiment_info = ".*", "_", func_module_number = "\\d+"), 
+                            cols_remove = TRUE) %>%
+            # Convert func_module_number to numeric for proper sorting
+            mutate(func_module_number = as.numeric(func_module_number))
+        
+        # Max term size grouped by source (GO:BP, REAC etc)
+        gpr <- gpr %>%
+            group_by(source) %>%
+            filter(term_size < (max_term * effective_domain_size)) %>%
+            # sort
+            arrange(func_module_number, p_value)
+
+        # add rankings - ensure we're still grouped properly
+        gpr <- gpr %>%
+            group_by(source, func_module_number) %>%
+            mutate(
+                perc_rank = percent_rank(p_value),
+                cumelative_dist = cume_dist(p_value)
+            ) %>%
+            ungroup()  # Make sure to ungroup at the end
+
+        # Validate output structure
+        if (!all(c("perc_rank", "cumelative_dist") %in% colnames(gpr))) {
+            if(debug) warning("Rankings columns not properly created")
+            return(create_empty_result())
+        }
+
+        return(gpr)
+
+    }, error = function(e) {
+        if(debug) warning("Error in post-processing: ", e$message)
+        return(create_empty_result())
+    })
 }
 
 # Calculate Matthews Correlation Coefficient
@@ -335,20 +418,19 @@ pivot_gp_long <- function( root_dir, enrich_file, pfilt = 0.01, split_exp_module
     # Split exper info into 2 fields (expID, module)
 	if ( split_exp_module_field ){
 		df_long <- df_long %>%
-        	separate( 	module_info, 	
-            		    sep = "_mod_", 
-                		into = c( "experiment_info", "func_module_number" ), 
-                		remove =  TRUE, 
-                		convert = TRUE, 
-                		extra = "warn", 
-                		fill = "warn" )
+			separate( 	module_info,
+						sep = "_mod_", 
+						into = c( "experiment_info", "func_module_number" ), 
+						remove =  TRUE, 
+						convert = TRUE, 
+						extra = "warn", 
+						fill = "warn" )
 	}
-    
 
-    # df_long <- arrange( df_long, func_module_number, adjusted_p_value )
-    # If want to print all rows...
-    # print.data.frame(df_long)
-    return(df_long)
+	# df_long <- arrange( df_long, func_module_number, adjusted_p_value )
+	# If want to print all rows...
+	# print.data.frame(df_long)
+	return(df_long)
 }
 
 # from /Users/ash/Dropbox/bioinf/MACSMAF/experiments/e017/process_modules.R

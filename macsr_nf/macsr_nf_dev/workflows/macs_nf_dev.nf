@@ -1,5 +1,7 @@
 #!/usr/bin/env nextflow
 nextflow.enable.dsl=2
+// 01 2025 p.ashford@ucl.ac.uk
+// https://github.com/paulashford/macsmaf_nf
 
 // cd /Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev/workflows
 // export NF_CONFIG=/Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev/conf/base.config
@@ -10,12 +12,14 @@ nextflow.enable.dsl=2
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
-// include {PASCAL_GWAS} from '../macsr_nf/macsr_nf_dev/subworkflows/pascal_gwas/main.nf'
-include { PASCAL_GWAS } from '../subworkflows/pascal_gwas'
-include { CONVERT_IDS } from '../subworkflows/id_conversion'
+// include { PASCAL_GWAS } from '../subworkflows/pascal_gwas'
+include { NETWORK_PROCESSING } from '../subworkflows/network_processing'
 include { GO_SLIM } from '../subworkflows/go_slim'
-include { MOD_FUNC_ENRICH } from '../subworkflows/mod_func_enrich'
+include { MOD_FUNC_ENRICH } from '../subworkflows/mod_func_enrich/main.nf'
 include { RANK_ANNOT } from '../subworkflows/rank_annot'
+
+// Activate virtual environment for all processes
+// process.beforeScript = "source ${params.root_proj_dir}/venv/bin/activate"
 
 // Add validation functions
 def validateModFuncEnrichInputs(net_methods, net_dbs, net_cutoffs, modules_dir, file_prefix) {
@@ -98,6 +102,19 @@ def validateOutputPaths(output_dir) {
 }
 
 workflow {
+    // Debug input parameters
+    if (params.debug) {
+        log.info """
+        ==============================================
+        MACSMAF NF-DEV PIPELINE
+        ==============================================
+        Network DBs      : ${params.net_dbs}
+        Network Methods  : ${params.net_methods}
+        Network Cutoffs  : ${params.net_cutoffs}
+        """
+    }
+
+    // Parameters loaded message (keep this as it's useful even without debug)
     log.info """
     Parameters loaded:
     net_dbs: ${params.net_dbs}
@@ -114,89 +131,178 @@ workflow {
         params.net_file_prefix
     )
 
+    // Create input channel for network processing
+    ch_network_input = Channel.fromList(params.net_methods)
+        .combine(Channel.fromList(params.net_dbs))
+        .map { method, db -> 
+            def module_dir = "${params.nf_network_modules_dir}/${method}"
+            log.info "Creating network input for ${method}-${db} from ${module_dir}"
+            [method, db, file(module_dir)]
+        }
+        .tap { ch_network_debug }
+
+    // Add debug logging for network input channel
+    if (params.debug) {
+        ch_network_debug.view { method, db, dir ->
+            """
+            DEBUG: Network Input Channel:
+            Method: ${method}
+            Database: ${db}
+            Directory: ${dir}
+            """
+        }
+    }
+
+    // Process networks first if needed
+    if (params.preproc_net_modules) {
+        NETWORK_PROCESSING(ch_network_input)
+        
+        // Create a channel from the preprocessed networks with method and db info
+        ch_preprocessed = NETWORK_PROCESSING.out.pre_processed_networks
+            .map { method, db, _dir -> 
+                log.info "Network preprocessing complete for ${method}-${db}"
+                [method, db, "${params.nf_out_dir}/pre_processed_networks/${method}/${db}"]
+            }
+    } else {
+        ch_preprocessed = ch_network_input.map { method, db, _dir ->
+            [method, db, "${params.nf_network_modules_dir}/pre_processed_networks/${method}/${db}"]
+        }
+    }
+
     // Create channels from the parameters
-    ch_network_databases = Channel.fromList(params.net_dbs ?: [])
-                                .ifEmpty { error "No network types specified in params.net_dbs" }
-    ch_analysis_methods = Channel.fromList(params.net_methods ?: [])
-                                .ifEmpty { error "No network methods specified in params.net_methods" }
+    // ch_network_databases = Channel.fromList(params.net_dbs ?: [])
+    //                             .ifEmpty { error "No network types specified in params.net_dbs" }
+    // ch_analysis_methods = Channel.fromList(params.net_methods ?: [])
+    //                             .ifEmpty { error "No network methods specified in params.net_methods" }
     ch_network_cutoffs = Channel.fromList(params.net_cutoffs ?: [])
                                 .ifEmpty { error "No cutoff values specified in params.net_cutoffs" }
 
     // Create databases and methods pairs
-    ch_net_dbs_methods = ch_network_databases
-        .combine(ch_analysis_methods)
-        .map { db, method -> [ method, db ] }
+    // ch_net_dbs_methods = ch_network_databases
+    //     .combine(ch_analysis_methods)
+    //     .map { db, method -> [ method, db ] }
 
-    // Validate gprofiler parameters and run functional enrichment
+    // Validate gprofiler parameters
     validateGprofilerParams(
         params.gprofiler_sources,
         params.gprofiler_sig,
         params.gprofiler_exclude_iea
     )
 
+    // Create a combined channel with preprocessed directory and method/db pairs
+    ch_mfe_input = ch_preprocessed
+        .tap { ch_mfe_debug }
+
+    if (params.debug) {
+        ch_mfe_debug.view { method, db, dir ->
+            """
+            DEBUG: MFE input:
+            Method: ${method}
+            Database: ${db}
+            Preprocessed Directory: ${dir}
+            """
+        }
+    }
+
+    // Module functional enrichment workflow
     MOD_FUNC_ENRICH(
-        ch_net_dbs_methods,
-        ch_network_cutoffs,
-        params.nf_network_modules_dir,
+        ch_mfe_input,          // tuple(method, db, preprocessed_dir)
         params.net_file_prefix,
         params.gprofiler_sources,
         params.gprofiler_sig,
-        params.gprofiler_exclude_iea
+        params.gprofiler_exclude_iea,
+        ch_network_cutoffs     // list of cutoff values moved to end
     )
 
     // Add GO_SLIM workflow using MOD_FUNC_ENRICH output
     GO_SLIM(
-        MOD_FUNC_ENRICH.out.processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
+        MOD_FUNC_ENRICH.out.post_processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
         params.go_slim_min_perc_rank ?: 0.25
     )
 
     // Add RANK_ANNOT workflow
     RANK_ANNOT(
-        MOD_FUNC_ENRICH.out.processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
-        GO_SLIM.out.mapped_slim_results,           // tuple(method, db, cutoff, file) after mapping to slim
-        MOD_FUNC_ENRICH.out.modules,               // tuple(method, db, cutoff, file) containing gene lists
+        MOD_FUNC_ENRICH.out.post_processed_enrichment,  // tuple(method, db, cutoff, file) with metrics
+        GO_SLIM.out.mapped_slim_results,                // tuple(method, db, cutoff, file) after mapping to slim
+        MOD_FUNC_ENRICH.out.filtered_modules,          // tuple(method, db, cutoff, file) containing filtered gene lists
         params.max_term_size ?: 0.05
     )
 
+
     // Debug output
-    MOD_FUNC_ENRICH.out.processed_enrichment
+    MOD_FUNC_ENRICH.out.post_processed_enrichment
         .view { method, db, cutoff, file -> 
-            "DEBUG: Processed enrichment results:\n" +
+            params.debug ? "DEBUG: Processed enrichment results:\n" +
             "  Method: ${method}\n" +
             "  Database: ${db}\n" +
             "  Cutoff: ${cutoff}\n" +
-            "  File: ${file}"
+            "  File: ${file}" : null
         }
 
     GO_SLIM.out.go_slim_results
         .view { method, db, cutoff, file -> 
-            "DEBUG: GO Slim results:\n" +
+            params.debug ? "DEBUG: GO Slim results:\n" +
             "  Method: ${method}\n" +
             "  Database: ${db}\n" +
             "  Cutoff: ${cutoff}\n" +
-            "  File: ${file}"
+            "  File: ${file}" : null
         }
     
     RANK_ANNOT.out.ranked_results
         .view { method, db, cutoff, file -> 
-            "DEBUG: Ranked and annotated results:\n" +
+            params.debug ? "DEBUG: Ranked and annotated results:\n" +
             "  Method: ${method}\n" +
             "  Database: ${db}\n" +
             "  Cutoff: ${cutoff}\n" +
-            "  File: ${file}"
+            "  File: ${file}" : null
         }
 
     // Output for checking and validation
-    MOD_FUNC_ENRICH.out.modules
+    MOD_FUNC_ENRICH.out.parsed_modules
         .view { file -> 
-            "DEBUG: Parsed modules output:\n" +
-            "  File: ${file}"
+            params.debug ? "DEBUG: Parsed modules output:\n" +
+            "  File: ${file}" : null
         }
 
-    MOD_FUNC_ENRICH.out.processed_enrichment
+    MOD_FUNC_ENRICH.out.post_processed_enrichment
         .view { file -> 
-            "DEBUG: Processed enrichment results:\n" +
-            "  File: ${file}"
+            params.debug ? "DEBUG: Processed enrichment results:\n" +
+            "  File: ${file}" : null
         }
+}
+
+// Test workflow for NETWORK_PROCESSING
+workflow test_network_processing {
+    // Create test input channel with method, db, and path to network files
+    ch_test_input = Channel.of(
+        tuple(
+            'K1',                     // method
+            'humanbase',              // db
+            file("${params.nf_network_modules_dir}/K1")  // directory containing the network files
+        )
+    )
+
+    // Run network processing
+    NETWORK_PROCESSING(ch_test_input)
+    
+    // Debug output for network processing
+    if (params.debug) {
+        NETWORK_PROCESSING.out.pre_processed_networks
+            .view { method, db, file -> 
+                """
+                DEBUG: Network Processing Output:
+                Method: ${method}
+                Database: ${db}
+                File: ${file}
+                """
+            }
+    }
+
+    // g:Profiler parameters debug output
+    if (params.debug) {
+        log.info "DEBUG: gprofiler_sources = ${params.gprofiler_sources}"
+        log.info "DEBUG: gprofiler_sig = ${params.gprofiler_sig}"
+        log.info "DEBUG: gprofiler_exclude_iea = ${params.gprofiler_exclude_iea}"
+    }
 }
 

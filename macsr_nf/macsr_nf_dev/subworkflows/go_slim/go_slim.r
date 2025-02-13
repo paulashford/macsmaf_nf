@@ -7,6 +7,9 @@ library(optparse)
 library(tidyr)
 library(dplyr)
 
+# Get debug setting from environment variable
+debug_mode <- as.logical(Sys.getenv("DEBUG", "FALSE"))
+
 # Parse command line arguments
 option_list <- list(
     make_option("--input", type="character", help="Input RDS file path for enrichment results"),
@@ -18,6 +21,16 @@ opt <- parse_args(OptionParser(option_list=option_list))
 
 # Get top ranked GO:BP terms for each module (these wil be SLIMed)
 get_top_go_terms_by_module <- function(gpr, min_perc_rank=0.25) {
+    # Validate input data
+    if (!("perc_rank" %in% colnames(gpr))) {
+        if(debug_mode) {
+            stop("Required column 'perc_rank' not found in input data. Available columns: ", 
+                 paste(colnames(gpr), collapse=", "))
+        } else {
+            stop("Required column 'perc_rank' not found in input data.")
+        }
+    }
+    
     go_bp_mod <- gpr %>%
         ungroup() %>%
         filter(source == "GO:BP") %>%

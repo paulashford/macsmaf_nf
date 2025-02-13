@@ -139,10 +139,9 @@ macsr_nf/macsr_nf_dev/macsr_nf_dev/dev01.R
 macsr_nf/macsr_nf_dev/macsr_nf_dev/dev01.sh
 macsr_nf/**/temp*
 macsr_nf/**/*.tmp
-macsr_nf/**/output/
-macsr_nf/**/log*
+# macsr_nf/**/log*
 macsr_nf/macsr_nf_dev/README_TODO.txt
-macsr_nf/**/arc/
+# macsr_nf/**/arc/
 macsr_nf/**/dev/
 MACSMAF_final_2024.code-workspace
 macsr_nf/macsr_nf_dev/cursor_macsr_nf_dev.code-workspace
@@ -152,3 +151,4 @@ modules/.DS_Store
 macsr_nf/macsr_nf_dev/subworkflows/mod_func_enrich/test_out1.tmp.tsv
 macsr_nf/macsr_nf_dev/subworkflows/pascal_gwas/testin.tmps
 macsr_nf/macsr_nf_dev/scratch/scratch_pascal1.sh
+macsr_nf/macsr_nf_dev/scratch/scratch1.py

@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 # stats_function.r 
-# 20 01 2025
+# 20 01 2025 p.ashford@ucl.ac.uk
+# https://github.com/paulashford/macsmaf_nf
+
 # based on: experiments/e019/stats_functions.R
 
 # TopKLists - combine rankings of p-val and mcc using rank aggregation
