@@ -1,0 +1,2 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+R1	string	0.9	network_modules	27	KEGG	KEGG:00910	0.0012149705167823742	1	0.24186305948401748	1	Nitrogen metabolism	-	KEGG:00910	-

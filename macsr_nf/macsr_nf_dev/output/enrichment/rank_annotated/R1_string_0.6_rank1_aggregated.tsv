@@ -1,0 +1,7 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+R1	string	0.6	network_modules	48	GO:BP	GO:1902905	0.0019171718085049974	1	0.121539945902229	1	positive regulation of supramolecular fiber organization	GO:1902905	-	-
+R1	string	0.6	network_modules	98	GO:BP	GO:0009221	0.004468175280053667	1	0.27704988141747466	1	pyrimidine deoxyribonucleotide biosynthetic process	GO:0009221	-	-
+R1	string	0.6	network_modules	167	REAC	REAC:R-HSA-2142850	1.6779674839189002e-4	1	0.44698817556185216	1	Hyaluronan biosynthesis and export	-	-	REAC:R-HSA-2142850
+R1	string	0.6	network_modules	182	REAC	REAC:R-HSA-3371568	0.001525271712888384	1	0.26679570071555003	1	Attenuation phase	-	-	REAC:R-HSA-3371568
+R1	string	0.6	network_modules	252	GO:BP	GO:1902166	8.514670829758922e-4	1	0.32002851642455643	1	negative regulation of intrinsic apoptotic signaling pathway in response to DNA damage by p53 class mediator	GO:1902166	-	-
+R1	string	0.6	network_modules	252	REAC	REAC:R-HSA-202733	9.589917397205856e-4	1	0.12424259580996512	1	Cell surface interactions at the vascular wall	-	-	REAC:R-HSA-202733

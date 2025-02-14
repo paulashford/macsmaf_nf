@@ -1,0 +1,25 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+R1	string	0.4	network_modules	30	GO:BP	GO:0051673	8.305496365212e-4	1	0.36493383771979027	1	disruption of plasma membrane integrity in another organism	GO:0051673	-	-
+R1	string	0.4	network_modules	87	REAC	REAC:R-HSA-432047	3.066417542155245e-5	1	0.27663797046372274	1	Passive transport by Aquaporins	-	-	REAC:R-HSA-432047
+R1	string	0.4	network_modules	87	GO:BP	GO:0006833	3.0120683878523305e-4	1	0.20153609715055812	1	water transport	GO:0006833	-	-
+R1	string	0.4	network_modules	102	REAC	REAC:R-HSA-917937	3.395465788607598e-5	1	0.1157562407317582	3	Iron uptake and transport	-	-	REAC:R-HSA-77387
+R1	string	0.4	network_modules	102	REAC	REAC:R-HSA-77387	4.033044375926445e-5	2	0.13474892515180198	1	Insulin receptor recycling	-	-	REAC:R-HSA-77387
+R1	string	0.4	network_modules	102	REAC	REAC:R-HSA-917977	4.794309398018796e-5	3	0.13245431281508815	2	Transferrin endocytosis and recycling	-	-	REAC:R-HSA-77387
+R1	string	0.4	network_modules	102	KEGG	KEGG:05165	9.902375136313342e-5	1	0.07779982801664967	1	Human papillomavirus infection	-	KEGG:05165	-
+R1	string	0.4	network_modules	108	GO:BP	GO:0001942	0.0054102148304887585	1	0.2037389086019031	1	hair follicle development	GO:0001942	-	-
+R1	string	0.4	network_modules	131	KEGG	KEGG:05330	0.004998356014637327	1	0.1705061262363346	1	Allograft rejection	-	KEGG:05330	-
+R1	string	0.4	network_modules	142	REAC	REAC:R-HSA-4090294	0.004620445367777783	1	0.20348763012649823	1	SUMOylation of intracellular receptors	-	-	REAC:R-HSA-4090294
+R1	string	0.4	network_modules	165	KEGG	KEGG:04340	0.0011321625623807944	1	0.18837970555186062	1	Hedgehog signaling pathway	-	KEGG:04340	-
+R1	string	0.4	network_modules	165	KEGG	KEGG:04115	0.001985695507136707	2	0.16369974458713746	2	p53 signaling pathway	-	KEGG:04340	-
+R1	string	0.4	network_modules	165	REAC	REAC:R-HSA-9634638	0.0025236339498793197	1	0.23521593968333548	1	Estrogen-dependent nuclear events downstream of ESR-membrane signaling	-	-	REAC:R-HSA-9634638
+R1	string	0.4	network_modules	225	REAC	REAC:R-HSA-5637815	0.001244062203036563	1	0.2796580487130793	1	Signaling by Ligand-Responsive EGFR Variants in Cancer	-	-	REAC:R-HSA-5637815
+R1	string	0.4	network_modules	225	REAC	REAC:R-HSA-1236382	0.001244062203036563	2	0.2796580487130793	2	Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants	-	-	REAC:R-HSA-5637815
+R1	string	0.4	network_modules	244	GO:BP	GO:0002313	0.004326362348540647	1	0.23533773430016888	1	mature B cell differentiation involved in immune response	GO:0002313	-	-
+R1	string	0.4	network_modules	252	GO:BP	GO:0018076	1.6985727066230202e-4	1	0.4998763218106487	1	N-terminal peptidyl-lysine acetylation	GO:0018076	-	-
+R1	string	0.4	network_modules	252	GO:BP	GO:0018393	5.943534082384454e-4	2	0.37776578586754944	2	internal peptidyl-lysine acetylation	GO:0018076	-	-
+R1	string	0.4	network_modules	252	REAC	REAC:R-HSA-9617629	7.546241237176022e-4	1	0.31585093673197046	1	Regulation of FOXO transcriptional activity by acetylation	-	-	REAC:R-HSA-9617629
+R1	string	0.4	network_modules	252	GO:BP	GO:0006475	0.0012732994063267206	3	0.3159735061817264	3	internal protein amino acid acetylation	GO:0018076	-	-
+R1	string	0.4	network_modules	285	REAC	REAC:R-HSA-176974	0.0021598352144843297	1	0.2576899618144285	1	Unwinding of DNA	-	-	REAC:R-HSA-176974
+R1	string	0.4	network_modules	294	REAC	REAC:R-HSA-140877	2.657018825648456e-11	1	0.2701918526027901	1	Formation of Fibrin Clot (Clotting Cascade)	-	-	REAC:R-HSA-140877
+R1	string	0.4	network_modules	294	KEGG	KEGG:04610	3.281570368660519e-9	1	0.19180606051766436	1	Complement and coagulation cascades	-	KEGG:04610	-
+R1	string	0.4	network_modules	294	GO:BP	GO:0007596	7.41390606429826e-7	1	0.1205468041406691	1	blood coagulation	GO:0007596	-	-

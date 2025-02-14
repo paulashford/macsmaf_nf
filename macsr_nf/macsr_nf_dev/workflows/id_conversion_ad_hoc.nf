@@ -14,7 +14,7 @@ include { CONVERT_IDS } from '../subworkflows/id_conversion/main.nf'
 
 // ad-hoc parameters
 	// what is geneID type in network to convert? (i.e. is it the original net (i.e. source IDs defined by dict), or an already processed net, etc)
-    params.input_network_file_type = 'original' // (alternatively: 'net_id_type_orig')
+    // params.input_network_file_type = 'original' // (alternatively: 'net_id_type_orig')
 	
 	// params.input_network_db = 'humanbase'
 	// params.input_network_method = 'K1'
@@ -24,57 +24,65 @@ include { CONVERT_IDS } from '../subworkflows/id_conversion/main.nf'
 	// params.map_file_type = 'hgnc' // alternatively 'biomart' (also 'uniprotkb' if need uniprot acc) - defined in dict MAPPING_FILE_TYPES
 	// what is the type of geneID to convert to?
 	// params.id_map_to = 'ensembl_gene_id'
-	// params.id_conversion_out_dir = "${params.id_conversion_out_dir}/${params.map_file_type}"
+	// params.id_output_dir = "${params.id_conversion_out_dir}/${params.map_file_type}"
 
-	params.input_network_db = 'string'
-	params.input_network_method = 'K1'
-	params.input_network_file = "${params.nf_out_dir}/pre_processed_networks/network_modules_K1_string.dat"
-	// what map file to use for translating IDs
-	params.map_file = "${params.map_biomart}"
-	params.map_file_type = 'biomart' 
-	params.id_map_to = 'Gene_stable_ID' // ensembl_gene_id
-	params.id_conversion_out_dir = "${params.id_conversion_out_dir}/${params.map_file_type}"
+	// params.input_network_db = 'string'
+	// params.input_network_method = 'K1'
+	// params.input_network_file = "${params.nf_out_dir}/pre_processed_networks/network_modules_K1_string.dat"
+	// // what map file to use for translating IDs
+	// params.map_file = "${params.map_biomart}"
+	// params.map_file_type = 'biomart' 
+	// params.id_map_to = 'Gene_stable_ID' // ensembl_gene_id
+	// params.id_output_dir = "${params.id_conversion_out_dir}/${params.map_file_type}"
 
 	// params.input_network_db = 'cpdb' (not required for orignal geneID to ENSG as CPDB uses ENSG IDs in its network)
 	
 	// Run for a channel of files in input dir
-	params.input_network_dir = "${params.nf_out_dir}/pre_processed_networks"
+	params.input_network_dir = "${params.nf_out_dir}/compiled_module_datasets/v01/pre_processed_networks"
+	// params.input_network_dir = "${params.nf_out_dir}/pre_processed_networks"
 	params.input_network_file_type = 'net_id_type_pre_proc'
+	params.map_file = "${params.map_hgnc}"
 	params.map_file_type = 'hgnc'
 	params.id_map_to = 'symbol'
-	params.id_conversion_out_dir = "${params.id_conversion_out_dir}/batch_processed_networks/${params.map_file_type}"
+	params.id_output_dir = "${params.id_conversion_out_dir}/${params.map_file_type}"
 
 workflow {
     // Add debug parameter explicitly
     params.debug = params.debug ?: false
 
-	// Ensure ouput directory exists (will only create final dir, not any parent dirs)
-    file(params.id_conversion_out_dir).mkdir()
+    // Ensure output directory exists
+    file(params.id_output_dir).mkdir()
 
-	// Ensure logging file
-    
-	// Create input channels
-    ch_network_file = Channel.fromPath(params.input_network_file)
+    // Create input channel for all .dat files in pre_processed_networks directory
+    ch_network_files = Channel
+        .fromPath("${params.input_network_dir}/*.dat")
+        .map { file -> 
+            // Extract method and db from filename (assuming format: network_modules_K1_humanbase.dat)
+            def parts = file.name.toString().split('_')
+            def method = parts[2]  // K1
+            def db = parts[3].replace('.dat', '')  // humanbase
+            return tuple(file, method, db)
+        }
 
     // Create mapping channel with correct mapping type
     ch_mapping = Channel.value(
-			[
-				file(params.map_file),
-				params.map_file_type,
-				params.id_map_to
-			] 
-		)
+        [
+            file(params.map_file),
+            params.map_file_type,
+            params.id_map_to
+        ] 
+    )
 
-    // Run CONVERT_IDS workflow
+    // Run CONVERT_IDS workflow for each file
     CONVERT_IDS(
-		params.id_conversion_out_dir,
-		params.id_map_to,
-		params.input_network_method,
-        ch_network_file,
-        params.input_network_db,
-        params.input_network_file_type,
+        Channel.value(params.id_output_dir),
+        Channel.value(params.id_map_to),
+        ch_network_files.map{ it[1] },  // method
+        ch_network_files.map{ it[0] },  // file
+        ch_network_files.map{ it[2] },  // db
+        Channel.value(params.input_network_file_type),
         ch_mapping
-    ) 
+    )
 
 	// onError {
 	// 	log.error """
