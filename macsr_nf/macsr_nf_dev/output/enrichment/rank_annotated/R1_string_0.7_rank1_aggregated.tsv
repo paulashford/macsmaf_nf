@@ -1,5 +1,0 @@
-network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
-R1	string	0.7	network_modules	66	REAC	REAC:R-HSA-432047	5.627745711217318e-6	1	0.33916923495392937	1	Passive transport by Aquaporins	-	-	REAC:R-HSA-432047
-R1	string	0.7	network_modules	66	GO:BP	GO:0006833	2.643908111323559e-5	1	0.27340379576328244	1	water transport	GO:0006833	-	-
-R1	string	0.7	network_modules	160	REAC	REAC:R-HSA-211897	4.8260031075254454e-8	1	0.19150422727390334	1	Cytochrome P450 - arranged by substrate type	-	-	REAC:R-HSA-211897
-R1	string	0.7	network_modules	272	KEGG	KEGG:05330	0.0023095051353972064	1	0.19726958185952417	1	Allograft rejection	-	KEGG:05330	-

@@ -134,20 +134,12 @@ workflow {
     // Create input channel for network processing
     ch_network_input = Channel.fromList(params.net_methods)
         .combine(Channel.fromList(params.net_dbs))
-    if (params.preproc_net_modules){
-        ch_network_input = ch_network_input.map { method, db -> 
+        .map { method, db -> 
             def module_dir = "${params.nf_network_modules_dir}/${method}"
             log.info "Creating network input for ${method}-${db} from ${module_dir}"
             [method, db, file(module_dir)]
         }
         .tap { ch_network_debug }
-    } else {
-        ch_network_input = ch_network_input.map { method, db -> 
-            def module_dir = "${params.nf_network_modules_dir}"
-            log.info "Creating network input for ${method}-${db} from ${params.nf_network_modules_dir}"
-            [method, db, file(module_dir)]
-        }
-    }
 
     // Add debug logging for network input channel
     if (params.debug) {
@@ -169,14 +161,11 @@ workflow {
         ch_preprocessed = NETWORK_PROCESSING.out.pre_processed_networks
             .map { method, db, _dir -> 
                 log.info "Network preprocessing complete for ${method}-${db}"
-                // [method, db, "${params.nf_out_dir}/pre_processed_networks/${method}/${db}"]
-                [method, db, "${params.nf_out_dir}/pre_processed_networks"]
+                [method, db, "${params.nf_out_dir}/pre_processed_networks/${method}/${db}"]
             }
     } else {
         ch_preprocessed = ch_network_input.map { method, db, _dir ->
-            log.info "Using existing preprocessed networks for ${method}-${db}"
-            // [method, db, "${params.nf_network_modules_dir}/pre_processed_networks/${method}/${db}"]
-            [method, db, "${params.nf_network_modules_dir}"]
+            [method, db, "${params.nf_network_modules_dir}/pre_processed_networks/${method}/${db}"]
         }
     }
 

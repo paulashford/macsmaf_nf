@@ -3,8 +3,8 @@
 export NF_WORKFLOW_DIR=/Users/ash/git/macsmaf/macsr_nf
 export NF_CONFIG="${NF_WORKFLOW_DIR}/macsr_nf_dev/conf/base.config"
 export NXF_FILE_ROOT="${NF_WORKFLOW_DIR}/macsr_nf_dev"
+
 export DEBUG='false'
-source "${NXF_FILE_ROOT}/venv/bin/activate"
 # source venv/bin/activate
 nextflow run ${NF_WORKFLOW_DIR}/macsr_nf_dev/workflows/macs_nf_dev.nf -c "${NF_CONFIG}"
 

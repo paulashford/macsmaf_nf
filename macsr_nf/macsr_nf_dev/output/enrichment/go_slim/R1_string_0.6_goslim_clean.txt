@@ -1,5 +1,0 @@
-func_module_number	go_slim_pir
-48	GO:0050789
-98	GO:0009117
-182	GO:0050789
-252	GO:0050789

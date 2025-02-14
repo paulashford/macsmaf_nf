@@ -108,11 +108,11 @@ df_prefinal <- load_final( final_dir =  file.path( root_dir, 'functional_enrichm
 		mutate( genes_orig = paste0( unique(genes), collapse = ";" ) ) %>%
 		mutate( genes_hugo = paste0( unique(converted_alias), collapse = ";" ) ) %>%
 		mutate( genes_descriptions = paste0( unique(description), collapse = " ~ " ) ) %>%
-		select( -c( genes, converted_alias, description ) )%>%
+		select( -c(genes,converted_alias, description ) )%>%
 		distinct()
 
 	# Save summary file with hugos
-	write_tibble( tib = df_final_hugo, out_dir = out_dir, file_name = summary_out_file_hugo, sep = '\t' )
+	write_tibble( tib =df_final_hugo, out_dir = out_dir, file_name = summary_out_file_hugo, sep = '\t' )
 
 
 ######################################

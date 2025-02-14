@@ -4,7 +4,8 @@
 process convert_gene_ids {
     //debug { params.debug }
     tag "${network_db}:${network_file_type}"
-    publishDir "${params.id_conversion_out_dir}", mode: 'copy'
+    publishDir "${params.nf_out_dir}/converted_networks/${network_file_type}", 
+        mode: 'copy'
 
     // Activate virtual environment 
     beforeScript "source ${params.root_proj_dir}/venv/bin/activate"
@@ -93,13 +94,13 @@ workflow PREPROC_MODULE_FILE {
 
 workflow CONVERT_IDS {
     take:
-        out_dir         // Channel
-        id_map_to       // Channel
-        input_network_method  // Channel
-        network_file    // Channel
-        network_db      // Channel
-        network_file_type  // Channel
-        ch_mapping     // Channel
+        out_dir
+        id_map_to
+        input_network_method
+        network_file
+        network_db
+        network_file_type
+        ch_mapping
 
     main:
         if (params.debug) {

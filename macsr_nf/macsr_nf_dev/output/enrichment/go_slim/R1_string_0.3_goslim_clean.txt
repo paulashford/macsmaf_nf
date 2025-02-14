@@ -1,5 +1,0 @@
-func_module_number	go_slim_pir
-20	GO:0051604
-133	GO:0050789
-197	GO:0008152
-266	GO:0050789
