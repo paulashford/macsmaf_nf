@@ -1,0 +1,3 @@
+2025-02-05 15:33:16,909 | INFO | Starting logging... (level=DEBUG)
+2025-02-05 15:33:16,910 | INFO | conv_hgnc --map_file /Users/ash/data/funvar_pipeline/datasets/hgnc/hgnc_complete_set.txt conv_hgnc --map_file hgnc ids_to_convert ['328', '8666', '7381', '27335', '4831', '3615', '1327', '1350', '11331', '3094', '6633', '5859', '5250', '5438', '746', '47', '4724', '54543', '9380'] id_type entrez_id approved_only True col_filter True outfile <unopened file 'converted_id_map_table.tsv' w> 
+type entrez_id approved_only True col_filter True outfile <unopened file 'converted_id_map_table.tsv' w> 

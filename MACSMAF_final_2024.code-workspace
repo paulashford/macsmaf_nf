@@ -1,0 +1,54 @@
+{
+	"folders": [
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/datasets/d023"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/experiments/e022"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/experiments/e019"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/experiments/e017"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/experiments/e018"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/experiments/e023"
+		},
+		{
+			"path": "../../Dropbox/bioinf/MACSMAF/datasets/d018"
+		},
+		{
+			"path": "../cath/domain-annotation-pipeline"
+		},
+		{
+			"path": "../dev/nextflow_pipelines/test_datasets"
+		}
+	],
+	"settings": {
+		"terminal.explorerKind": "both",
+		"workbench.preferredDarkColorTheme": "Snappy (rainglow)",
+		"workbench.colorTheme": "Azure (rainglow)",
+		"editor.indentSize": "tabSize",
+		"python.analysis.autoIndent": false,
+		"css.format.enable": false,
+		"editor.insertSpaces": false,
+		"editor.tabSize": 4,
+		"editor.detectIndentation": true,
+		"editor.autoIndent": "full",
+		"[markdown][plaintext]": {
+    		"editor.insertSpaces": true	
+		}	
+		
+	}
+	
+}

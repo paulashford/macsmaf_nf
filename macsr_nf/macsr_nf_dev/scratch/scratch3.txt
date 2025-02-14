@@ -1,0 +1,34 @@
+DEBUG: Input mapping channel: [/Users/ash/data/funvar_pipeline/datasets/hgnc/hgnc_complete_set.txt, hgnc, symbol, ensembl_gene_id]
+DEBUG: Preprocessed module file content:
+~4071	857	11030	1277	7168	8572	8614	1278	182	4853	1910	2697	7082	2869	858	6525	7169
+
+<...>
+
+DEBUG: Processed module:
+ID:
+Genes: 40717	8579	11030	1277	716806	8572	86144	12783	18220	485356	19100	26977	70829	28699	85872	65258	7169
+
+
+ script:
+    """
+    # Preserve module ID and convert first tab to ~
+    awk '{print \$1"~"\$2}' < $module_file > module_file_preproc.dat
+    """
+
+	// // sed -E 's/(.*\\_[0-9]*)(\\t)/\\1~/' $module_file > module_file_preproc.dat
+    // $sed_pp_modules_lines_script $module_file > module_file_preproc1.dat
+    // tr '\t' ',' < module_file_preproc1.dat > module_file_preproc.dat
+
+
+	 awk '{print $1"~"$0}' < HEAD3_network_modules_K1_humanbase.dat | sed 's/~[^~]*~/~/' > TEST3b.dat
+
+  awk -F'\\t' '{
+        module_id=$1
+        $1=""  # Remove first field
+        sub(/^[ \\t]+/, "", $0)  # Remove leading whitespace
+        print module_id"~"$0
+    }' HEAD3_network_modules_K1_humanbase.dat > HEAD3_OUT.dat
+
+
+
+	ERROR ~ Invalid method invocation `call` with arguments: [/Users/ash/data/funvar_pipeline/datasets/hgnc/hgnc_complete_set.txt, hgnc, symbol, entrez_id] (java.util.LinkedList) on _closure30 type

@@ -1,0 +1,78 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+K1	string	0.3	network_modules	1	REAC	REAC:R-HSA-909733	9.13821789608505e-61	1	0.4832443192852982	1	Interferon alpha/beta signaling	-	-	REAC:R-HSA-909733
+K1	string	0.3	network_modules	1	GO:BP	GO:0051607	2.412098892238518e-52	1	0.2941395750248686	1	defense response to virus	GO:0051607	-	-
+K1	string	0.3	network_modules	1	KEGG	KEGG:05169	1.3374893096856435e-20	1	0.203604960087231	1	Epstein-Barr virus infection	-	KEGG:05169	-
+K1	string	0.3	network_modules	2	GO:BP	GO:0008380	1.8919791495830588e-13	1	0.12212675738315203	1	RNA splicing	GO:0008380	-	-
+K1	string	0.3	network_modules	3	GO:BP	GO:0000278	5.036215627554774e-46	1	0.196146846177198	15	mitotic cell cycle	GO:0000278	-	-
+K1	string	0.3	network_modules	3	REAC	REAC:R-HSA-69620	5.2719481891582914e-23	1	0.1843013556888952	1	Cell Cycle Checkpoints	-	-	REAC:R-HSA-69620
+K1	string	0.3	network_modules	5	GO:BP	GO:0045321	1.5098145132745254e-25	1	0.1443200991244878	11	leukocyte activation	GO:0045321	-	-
+K1	string	0.3	network_modules	5	REAC	REAC:R-HSA-6798695	9.953829006753334e-12	1	0.11065136971709442	1	Neutrophil degranulation	-	-	REAC:R-HSA-6798695
+K1	string	0.3	network_modules	5	KEGG	KEGG:05140	2.169630057227992e-9	2	0.15114096853084077	1	Leishmaniasis	-	KEGG:05140	-
+K1	string	0.3	network_modules	6	REAC	REAC:R-HSA-6785807	2.6884076640111723e-11	1	0.14644670037765534	1	Interleukin-4 and Interleukin-13 signaling	-	-	REAC:R-HSA-6785807
+K1	string	0.3	network_modules	6	KEGG	KEGG:04657	6.013675208690901e-11	2	0.1570543272073209	1	IL-17 signaling pathway	-	KEGG:04657	-
+K1	string	0.3	network_modules	6	GO:BP	GO:0038066	8.21160703243957e-8	2	0.13187061135471123	1	p38MAPK cascade	GO:0038066	-	-
+K1	string	0.3	network_modules	10	GO:BP	GO:0022613	1.2528744271560187e-5	1	0.08242949897724546	1	ribonucleoprotein complex biogenesis	GO:0022613	-	-
+K1	string	0.3	network_modules	10	REAC	REAC:R-HSA-5389840	1.4344625559747185e-5	1	0.1224323647512574	1	Mitochondrial translation elongation	-	-	REAC:R-HSA-5389840
+K1	string	0.3	network_modules	11	GO:BP	GO:0007167	5.154712792533666e-4	1	0.06756989897421549	1	enzyme-linked receptor protein signaling pathway	GO:0007167	-	-
+K1	string	0.3	network_modules	13	KEGG	KEGG:03050	9.833347662386484e-7	1	0.18176919960219523	1	Proteasome	-	KEGG:03050	-
+K1	string	0.3	network_modules	13	REAC	REAC:R-HSA-1236978	5.6596972075677695e-5	2	0.12964949177182344	1	Cross-presentation of soluble exogenous antigens (endosomes)	-	-	REAC:R-HSA-1236978
+K1	string	0.3	network_modules	15	GO:BP	GO:0001732	5.72823393491153e-4	2	0.1870650819268692	1	formation of cytoplasmic translation initiation complex	GO:0001732	-	-
+K1	string	0.3	network_modules	16	GO:BP	GO:0022613	2.1751435512308205e-13	1	0.11526182261853178	1	ribonucleoprotein complex biogenesis	GO:0022613	-	-
+K1	string	0.3	network_modules	16	REAC	REAC:R-HSA-72203	4.2035407523716844e-11	1	0.12307158618607894	1	Processing of Capped Intron-Containing Pre-mRNA	-	-	REAC:R-HSA-72203
+K1	string	0.3	network_modules	18	GO:BP	GO:1903047	1.774987939921848e-33	2	0.17820774605700723	4	mitotic cell cycle process	GO:1903047	-	-
+K1	string	0.3	network_modules	18	KEGG	KEGG:03030	4.653458546265282e-10	2	0.1996233455205467	1	DNA replication	-	KEGG:03030	-
+K1	string	0.3	network_modules	18	REAC	REAC:R-HSA-176974	3.2032845204325766e-9	11	0.23630917028986684	1	Unwinding of DNA	-	-	REAC:R-HSA-176974
+K1	string	0.3	network_modules	19	GO:BP	GO:0016485	0.0027830589807225745	1	0.0927410811334572	1	protein processing	GO:0016485	-	-
+K1	string	0.3	network_modules	21	REAC	REAC:R-HSA-114608	3.920168254577513e-9	2	0.1309403482930885	1	Platelet degranulation 	-	-	REAC:R-HSA-114608
+K1	string	0.3	network_modules	21	GO:BP	GO:0007015	1.295493518340685e-8	2	0.08942113577806203	1	actin filament organization	GO:0007015	-	-
+K1	string	0.3	network_modules	22	GO:BP	GO:0019646	2.929663826391073e-15	1	0.29363128403503597	1	aerobic electron transport chain	GO:0019646	-	-
+K1	string	0.3	network_modules	22	REAC	REAC:R-HSA-611105	1.182589070088349e-13	1	0.26130826349094055	1	Respiratory electron transport	-	-	REAC:R-HSA-611105
+K1	string	0.3	network_modules	22	KEGG	KEGG:00190	1.754380725552808e-13	1	0.24251597853552037	1	Oxidative phosphorylation	-	KEGG:00190	-
+K1	string	0.3	network_modules	23	REAC	REAC:R-HSA-156842	1.1280976174580582e-14	1	0.26618866025098903	2	Eukaryotic Translation Elongation	-	-	REAC:R-HSA-156842
+K1	string	0.3	network_modules	25	REAC	REAC:R-HSA-8868773	4.4049211275088755e-10	1	0.15882063884934583	1	rRNA processing in the nucleus and cytosol	-	-	REAC:R-HSA-8868773
+K1	string	0.3	network_modules	25	GO:BP	GO:0042254	1.7141793957824813e-9	1	0.12511023901185214	1	ribosome biogenesis	GO:0042254	-	-
+K1	string	0.3	network_modules	26	GO:BP	GO:0051276	5.097291315969388e-8	1	0.08429708053325156	1	chromosome organization	GO:0051276	-	-
+K1	string	0.3	network_modules	26	KEGG	KEGG:03013	2.3194937500063842e-7	1	0.13252712878759018	1	Nucleocytoplasmic transport	-	KEGG:03013	-
+K1	string	0.3	network_modules	26	REAC	REAC:R-HSA-168333	2.7885723677936516e-7	6	0.17359465546357927	1	NEP/NS2 Interacts with the Cellular Export Machinery	-	-	REAC:R-HSA-168333
+K1	string	0.3	network_modules	27	REAC	REAC:R-HSA-156842	6.66341533990756e-13	1	0.27179808163155517	1	Eukaryotic Translation Elongation	-	-	REAC:R-HSA-156842
+K1	string	0.3	network_modules	27	GO:BP	GO:0002181	6.75040741275739e-12	1	0.20949946298442282	1	cytoplasmic translation	GO:0002181	-	-
+K1	string	0.3	network_modules	28	KEGG	KEGG:05415	0.0028073625954815355	1	0.10345225949875657	1	Diabetic cardiomyopathy	-	KEGG:05415	-
+K1	string	0.3	network_modules	31	KEGG	KEGG:04068	1.7815769855854147e-4	1	0.15018366161940783	1	FoxO signaling pathway	-	KEGG:04068	-
+K1	string	0.3	network_modules	32	GO:BP	GO:0000377	5.284180901477404e-26	3	0.19977534981684883	2	RNA splicing, via transesterification reactions with bulged adenosine as nucleophile	GO:0000377	-	-
+K1	string	0.3	network_modules	32	REAC	REAC:R-HSA-72163	3.0705051625858644e-25	1	0.23302109252443004	1	mRNA Splicing - Major Pathway	-	-	REAC:R-HSA-72163
+K1	string	0.3	network_modules	32	KEGG	KEGG:03040	4.865896286852473e-17	1	0.20917134981186944	1	Spliceosome	-	KEGG:03040	-
+K1	string	0.3	network_modules	36	KEGG	KEGG:01212	1.3963352510626504e-4	1	0.17636004644164346	1	Fatty acid metabolism	-	KEGG:01212	-
+K1	string	0.3	network_modules	36	REAC	REAC:R-HSA-2426168	3.760394303858328e-4	2	0.1781350792354521	1	Activation of gene expression by SREBF (SREBP)	-	-	REAC:R-HSA-2426168
+K1	string	0.3	network_modules	38	GO:BP	GO:1903076	0.005758001578749265	1	0.11636196378838377	1	regulation of protein localization to plasma membrane	GO:1903076	-	-
+K1	string	0.3	network_modules	40	REAC	REAC:R-HSA-6804757	5.794250168025207e-6	1	0.20952197024869593	1	Regulation of TP53 Degradation	-	-	REAC:R-HSA-6804757
+K1	string	0.3	network_modules	40	GO:BP	GO:0070647	1.363059609869627e-4	1	0.07060817381416953	1	protein modification by small protein conjugation or removal	GO:0070647	-	-
+K1	string	0.3	network_modules	46	GO:BP	GO:0018916	2.324711696457259e-8	2	0.70704119193562	1	nitrobenzene metabolic process	GO:0018916	-	-
+K1	string	0.3	network_modules	46	REAC	REAC:R-HSA-156590	2.5027766123267246e-7	1	0.27925946533487517	1	Glutathione conjugation	-	-	REAC:R-HSA-156590
+K1	string	0.3	network_modules	46	KEGG	KEGG:00480	1.2396946321108256e-6	1	0.21685062046341083	1	Glutathione metabolism	-	KEGG:00480	-
+K1	string	0.3	network_modules	52	KEGG	KEGG:05167	9.648376966439432e-4	1	0.09806451687273454	1	Kaposi sarcoma-associated herpesvirus infection	-	KEGG:05167	-
+K1	string	0.3	network_modules	60	KEGG	KEGG:04917	0.001775436745551696	1	0.16835192924958156	1	Prolactin signaling pathway	-	KEGG:04917	-
+K1	string	0.3	network_modules	61	REAC	REAC:R-HSA-6798695	1.5579056664488846e-6	1	0.10121340511873103	1	Neutrophil degranulation	-	-	REAC:R-HSA-6798695
+K1	string	0.3	network_modules	61	KEGG	KEGG:04142	5.270930303994548e-6	1	0.14275166773152362	1	Lysosome	-	KEGG:04142	-
+K1	string	0.3	network_modules	87	REAC	REAC:R-HSA-9762114	2.572792375212636e-9	1	0.282201466019004	1	GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2	-	-	REAC:R-HSA-9762114
+K1	string	0.3	network_modules	87	KEGG	KEGG:03050	1.2700609731049187e-6	1	0.22148861517374555	1	Proteasome	-	KEGG:03050	-
+K1	string	0.3	network_modules	90	KEGG	KEGG:01521	6.724299523511669e-9	1	0.2112673740525815	1	EGFR tyrosine kinase inhibitor resistance	-	KEGG:01521	-
+K1	string	0.3	network_modules	90	GO:BP	GO:0007169	3.014266729469911e-6	1	0.09093602593005501	1	cell surface receptor protein tyrosine kinase signaling pathway	GO:0007169	-	-
+K1	string	0.3	network_modules	90	REAC	REAC:R-HSA-1433557	2.0076007803639803e-5	2	0.18334670956139812	1	Signaling by SCF-KIT	-	-	REAC:R-HSA-1433557
+K1	string	0.3	network_modules	92	GO:BP	GO:0045638	1.9949241458577826e-4	1	0.17738700955319217	1	negative regulation of myeloid cell differentiation	GO:0045638	-	-
+K1	string	0.3	network_modules	104	GO:BP	GO:0006352	3.9223238808832884e-4	1	0.11342561214927233	1	DNA-templated transcription initiation	GO:0006352	-	-
+K1	string	0.3	network_modules	104	REAC	REAC:R-HSA-1989781	0.004512837993888541	1	0.11344870677961628	1	PPARA activates gene expression	-	-	REAC:R-HSA-1989781
+K1	string	0.3	network_modules	107	REAC	REAC:R-HSA-6809371	0.0010410576051185874	1	0.1313056817925445	1	Formation of the cornified envelope	-	-	REAC:R-HSA-6809371
+K1	string	0.3	network_modules	119	REAC	REAC:R-HSA-73894	0.004777063783466946	1	0.07499928666072295	1	DNA Repair	-	-	REAC:R-HSA-73894
+K1	string	0.3	network_modules	129	GO:BP	GO:0007249	7.956975154065387e-12	1	0.1516850635899156	1	canonical NF-kappaB signal transduction	GO:0007249	-	-
+K1	string	0.3	network_modules	129	KEGG	KEGG:04064	1.3351608259005726e-7	1	0.1685093783606423	1	NF-kappa B signaling pathway	-	KEGG:04064	-
+K1	string	0.3	network_modules	129	REAC	REAC:R-HSA-168176	1.7527237606339355e-5	1	0.13975055332758587	1	Toll Like Receptor 5 (TLR5) Cascade	-	-	REAC:R-HSA-168176
+K1	string	0.3	network_modules	151	GO:BP	GO:0048239	6.30699107025625e-4	1	0.40812205803437007	1	negative regulation of DNA recombination at telomere	GO:0048239	-	-
+K1	string	0.3	network_modules	179	KEGG	KEGG:03440	0.007297920072366088	1	0.15507594204819208	1	Homologous recombination	-	KEGG:03440	-
+K1	string	0.3	network_modules	234	REAC	REAC:R-HSA-5651801	1.1956017991914835e-5	2	0.29217935115695076	1	PCNA-Dependent Long Patch Base Excision Repair	-	-	REAC:R-HSA-5651801
+K1	string	0.3	network_modules	234	KEGG	KEGG:03030	3.420050583587794e-5	1	0.22256357572637966	1	DNA replication	-	KEGG:03030	-
+K1	string	0.3	network_modules	239	REAC	REAC:R-HSA-69273	7.064142946757534e-6	1	0.29948186161293255	1	Cyclin A/B1/B2 associated events during G2/M transition	-	-	REAC:R-HSA-69273
+K1	string	0.3	network_modules	239	KEGG	KEGG:04914	8.354525349930068e-5	1	0.17049468236049675	1	Progesterone-mediated oocyte maturation	-	KEGG:04914	-
+K1	string	0.3	network_modules	239	GO:BP	GO:1901995	8.493563784161808e-5	3	0.5772610151803533	1	positive regulation of meiotic cell cycle phase transition	GO:1901995	-	-
+K1	string	0.3	network_modules	242	GO:BP	GO:0006863	0.0024904164306056202	1	0.28253656168710733	1	purine nucleobase transport	GO:0006863	-	-
+K1	string	0.3	network_modules	279	REAC	REAC:R-HSA-5693567	3.4057413902325168e-6	1	0.17305366085989732	4	HDR through Homologous Recombination (HRR) or Single Strand Annealing (SSA)	-	-	REAC:R-HSA-5693567
+K1	string	0.3	network_modules	279	GO:BP	GO:0031860	1.6985727066230202e-4	1	0.4998763218106487	1	telomeric 3' overhang formation	GO:0031860	-	-

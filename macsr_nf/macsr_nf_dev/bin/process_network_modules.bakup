@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Process network modules script
+# Usage: process_network_modules.sh <method> <db> <input_dir> <output_file>
+
+method=$1
+db=$2
+input_dir=$3
+
+# Validate inputs
+if [ -z "$method" ] || [ -z "$db" ] || [ -z "$input_dir" ] ; then
+    echo "Error: Missing required parameters"
+    echo "Usage: process_network_modules.sh <method> <db> <input_dir> "
+    exit 1
+fi
+
+# Get the network modules files for given method and db and include the path on each line (-H)
+# net_glob="${input_dir}/${method}/*${db}*.dat"
+module_dir="${input_dir}/${method}"
+grep -HRS --include='*.dat' -e '' $module_dir > 'tmp_network_modules.dat'
+
+# Remove the directory and keep only the filename
+# /some/path/M1/modules-ENSG-M1-cpdb-coval-0.0.dat:1 ENSG00000215251 ENSG00000243927 ... > modules-ENSG-M1-cpdb-coval-0.0.dat ENSG00000215251 ENSG00000243927 ...
+sed -n 's/^\(.*\/\)*\(.*\)/\2/p' 'tmp_network_modules.dat' > 'tmp_network_modules_simplified.dat'
+# simplify the module labelling on each line
+# modules-ENSG-M1-cpdb-coval-0.0.dat:1 ENSG00000215251 ENSG00000243927 ... > network-modules-M1-cpdb-0.0_1 ENSG00000215251 ENSG00000243927 ...
+sed -E 's/^(.*)([M|R|K][1])(.*)(cpdb|humanbase|string)(.*)([0-9].[0-9])\.dat\:([0-9]+)/network-modules-\2-\4-\6\_\7/g' 'tmp_network_modules_simplified.dat' > 'tmp_network_modules_clean.dat'
+
+# remove spurious second column (literal "1")
+awk '!($2 = "")' 'tmp_network_modules_clean.dat' | tr -s '[:blank:]' | tr ' ' '\t'

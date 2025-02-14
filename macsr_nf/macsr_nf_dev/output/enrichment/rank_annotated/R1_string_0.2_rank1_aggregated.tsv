@@ -1,0 +1,2 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+R1	string	0.2	network_modules	11	REAC	REAC:R-HSA-8941333	9.88560555320085e-4	1	0.3330125109557372	1	RUNX2 regulates genes involved in differentiation of myeloid cells	-	-	REAC:R-HSA-8941333
