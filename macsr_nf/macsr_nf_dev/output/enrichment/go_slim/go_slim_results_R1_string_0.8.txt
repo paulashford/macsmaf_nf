@@ -1,0 +1,3 @@
+func_module_number	lst
+124	GO:0045624;GO:0032743
+133	GO:0007204;GO:0019722

@@ -69,6 +69,12 @@ add_pval_rank <- function(enrichment_results) {
 
 # Combine enrichment results with GO slim results
 comb_slim <- function(enrichment_results, goslims_results) {
+	# enforce numeric module numbers
+	enrichment_results <- enrichment_results %>%
+		mutate(module = as.numeric(module))
+	goslims_results <- goslims_results %>%
+		mutate(func_module_number = as.numeric(func_module_number))
+	
 	# Perform the join
 	comb_slim <- left_join(
 		enrichment_results,

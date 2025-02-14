@@ -1,0 +1,12 @@
+network_method	network_db	network_cutoff	experiment_info	module	source	term_id	p_value	row_rank_p	mcc	row_rank_mcc	term_name	top_go	top_kegg	top_reac
+R1	string	0.3	network_modules	20	KEGG	KEGG:04610	2.1450090684497792e-4	1	0.16041576156372586	1	Complement and coagulation cascades	-	KEGG:04610	-
+R1	string	0.3	network_modules	20	GO:BP	GO:0072378	0.005807378441737627	1	0.2305472419360095	1	blood coagulation, fibrin clot formation	GO:0072378	-	-
+R1	string	0.3	network_modules	123	KEGG	KEGG:04630	5.523397400013842e-4	1	0.09318944375592195	1	JAK-STAT signaling pathway	-	KEGG:04630	-
+R1	string	0.3	network_modules	133	GO:BP	GO:0055024	0.0013680235814271934	1	0.342838073300585	1	regulation of cardiac muscle tissue development	GO:0055024	-	-
+R1	string	0.3	network_modules	133	GO:BP	GO:0055026	0.0013680235814271934	2	0.342838073300585	2	negative regulation of cardiac muscle tissue development	GO:0055024	-	-
+R1	string	0.3	network_modules	173	KEGG	KEGG:05162	0.006949566689730939	1	0.11941682241020185	1	Measles	-	KEGG:05162	-
+R1	string	0.3	network_modules	195	KEGG	KEGG:04979	0.005241844271535335	1	0.160744667428134	1	Cholesterol metabolism	-	KEGG:04979	-
+R1	string	0.3	network_modules	197	GO:BP	GO:0006413	7.727768903886162e-4	1	0.14157504889904243	1	translational initiation	GO:0006413	-	-
+R1	string	0.3	network_modules	232	REAC	REAC:R-HSA-4085377	0.008295286235839682	1	0.17603067354664229	1	SUMOylation of SUMOylation proteins	-	-	REAC:R-HSA-4085377
+R1	string	0.3	network_modules	266	GO:BP	GO:1903749	0.0035840603632773596	1	0.1403050597743004	1	positive regulation of establishment of protein localization to mitochondrion	GO:1903749	-	-
+R1	string	0.3	network_modules	266	GO:BP	GO:1903955	0.0035840603632773596	2	0.1403050597743004	2	positive regulation of protein targeting to mitochondrion	GO:1903749	-	-
