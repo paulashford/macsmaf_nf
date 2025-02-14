@@ -1,0 +1,177 @@
+Ran as follows:
+03 02 2025
+soft links are set via Dropbox/bioinf/MACSMAF/datasets/d024/link_files.sh
+
+note params
+	nf_network_modules_dir		= 	"${params.user_root_dir}/Dropbox/bioinf/MACSMAF/datasets/d024"
+	preproc_net_modules 		= 	true
+	net_dbs						= 	[ 'cpdb', 'humanbase', 'string' ]
+	net_methods					= 	[ 'M1', 'R1', 'K1' ]
+	net_cutoffs					= 	[ '0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9' ]
+
+
+export NF_WORKFLOW_DIR=/Users/ash/git/macsmaf/macsr_nf
+export NF_CONFIG=${NF_WORKFLOW_DIR}/macsr_nf_dev/conf/base.config
+
+nextflow run "${NF_WORKFLOW_DIR}/macsr_nf_dev/workflows/macs_nf_dev.nf" -c "${NF_CONFIG}"
+
+ N E X T F L O W   ~  version 24.04.4
+
+Launching `/Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev/workflows/macs_nf_dev.nf` [nauseous_ampere] DSL2 - revision: 5dfed3906c
+
+
+    Parameters loaded:
+    net_dbs: [cpdb, humanbase, string]
+    net_methods: [M1, R1, K1]
+    net_cutoffs: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+executor >  local (9)
+[e9/fa3516] process > NETWORK_PROCESSING:PREPROC_NET_MODULES (7) [100%] 9 of 9 ✔
+Debug: Processing network modules for method=M1 db=cpdb
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/experiments/ey001/v03/General-Modules/M1
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Debug: Processing network modules for method=K1 db=string
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d018/k1
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Debug: Processing network modules for method=K1 db=cpdb
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d018/k1
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Network preprocessing complete
+DEBUG: MFE input:
+  Method: M1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: M1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: M1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+Completed at: 03-Feb-2025 16:33:08
+Duration    : 2m 29s
+CPU hours   : 0.2
+Succeeded   : 9
+
+
+
+--------------------------------------------------------------------------------
+v01 ** ERROR - WAS USING M1_R1_MODULES_DIR FROM ey001/v01 - should be v03 **
+soft links are set via Dropbox/bioinf/MACSMAF/datasets/d024/link_files.sh
+
+note params
+	nf_network_modules_dir		= 	"${params.user_root_dir}/Dropbox/bioinf/MACSMAF/datasets/d024"
+	preproc_net_modules 		= 	true
+	net_dbs						= 	[ 'cpdb', 'humanbase', 'string' ]
+	net_methods					= 	[ 'M1', 'R1', 'K1' ]
+	net_cutoffs					= 	[ '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9' ]
+
+
+ash@w7 macsr_nf % export NF_WORKFLOW_DIR=/Users/ash/git/macsmaf/macsr_nf
+export NF_CONFIG=${NF_WORKFLOW_DIR}/macsr_nf_dev/conf/base.config
+ash@w7 macsr_nf % nextflow run "${NF_WORKFLOW_DIR}/macsr_nf_dev/workflows/macs_nf_dev.nf" -c "${NF_CONFIG}"
+
+ N E X T F L O W   ~  version 24.04.4
+
+Launching `/Users/ash/git/macsmaf/macsr_nf/macsr_nf_dev/workflows/macs_nf_dev.nf` [determined_hamilton] DSL2 - revision: 5dfed3906c
+
+
+    Parameters loaded:
+    net_dbs: [cpdb, humanbase, string]
+    net_methods: [M1, R1, K1]
+    net_cutoffs: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+
+executor >  local (9)
+[f0/6335e1] process > NETWORK_PROCESSING:PREPROC_NET_MODULES (5) [100%] 9 of 9 ✔
+Debug: Processing network modules for method=M1 db=cpdb
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/experiments/ey001/v01/General-Modules
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Debug: Processing network modules for method=R1 db=cpdb
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/experiments/ey001/v01/General-Modules
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Debug: Processing network modules for method=K1 db=string
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d018/k1
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Debug: Processing network modules for method=K1 db=cpdb
+Debug: Input directory absolute path: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d018/k1
+Debug: Executing process_network_modules.sh
+Debug: Script exit status: 0
+
+Network preprocessing complete
+DEBUG: MFE input:
+  Method: M1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: M1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: cpdb
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: humanbase
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: M1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: R1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+DEBUG: MFE input:
+  Method: K1
+  Database: string
+  Preprocessed Directory: /Users/ash/Dropbox/bioinf/MACSMAF/datasets/d024/pre_processed_networks
+Completed at: 03-Feb-2025 16:04:49
+Duration    : 2m 40s
+CPU hours   : 0.2
+Succeeded   : 9

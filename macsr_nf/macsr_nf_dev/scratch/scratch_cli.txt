@@ -1,0 +1,14 @@
+macsr_nf_dev convert-ids-with-mapfile \
+    --map_file hgnc_complete_set.txt \
+    --map_file_type hgnc \
+    --ids_to_convert '4071 857' \
+    --id_type 'entrez_id' \
+    --approved_only \
+    --col_filter \
+    --outfile 'converted_id_map_table4.tsv' \
+    --id_type_out 'symbol' > converted_ids4.dat
+
+
+    // skip: 1,  // Skip header lines
+    // keepHeader: true  // Keep the header from the first file,
+    // tempDir: "${params.nf_out_dir}/converted_networks/temp"

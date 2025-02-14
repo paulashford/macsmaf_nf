@@ -1,0 +1,26 @@
+// Parse modules and combine with method/db info
+		ch_parsed_modules = ch_net_dbs_methods
+            .combine( parse_modules(network_file, net_file_prefix).collect().toList() )
+            
+            .map { method, db, _tmp , modules -> 
+                [ method, db, modules ]  // [method, db, modules]
+            }
+            .view { method, db, modules -> 
+                "DEBUG: Combined with methods/dbs - Method: ${method}, DB: ${db}, Modules: ${modules}"
+		
+		parsed_modules = parse_modules(network_file, net_file_prefix)
+			.combine(ch_net_dbs_methods)
+			.map { modules, netdb_method -> 
+				tuple(netdb_method[1], netdb_method[0], modules)  // [method, db, modules]
+			}
+			.combine(ch_net_cutoffs)
+			.map { method, db, modules, cutoff -> 
+				tuple(method, db, cutoff, modules[0])  // Extract the file path from the list
+			}
+			.view { method, db, cutoff, modules -> 
+				"DEBUG: Final tuple - Method: ${method}, DB: ${db}, Cutoff: ${cutoff}, Modules: ${modules}"
+			}
+			.view { it -> "DEBUG: it - $it" }
+			.flatten().toList()
+			.view { it -> "DEBUG: flatten - $it" }
+		
